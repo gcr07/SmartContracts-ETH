@@ -38,5 +38,8 @@ Local variables (in functions) of value types (e. g. uint32) always in stack<br>
   
 <p> Fuente: https://dlt-repo.net/storage-vs-memory-vs-stack-in-solidity-ethereum/ </p>
 
+<h1> Data Types </h1> 
+
+<p>  uint is an alias for uint256 </p> 
 
 
