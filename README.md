@@ -46,6 +46,18 @@ Local variables (in functions) of value types (e. g. uint32) always in stack<br>
 
 <h1> Data Types </h1> 
 
-<p>  uint is an alias for uint256 </p> 
-<p> int is same as int256 </p>
+<ol> 
+  <li> uint8 public u8 = 1;	</li>
+   <li> uint public u256 = 4</li>
+   <li> uint public u = 123	</li>
+    <li>int8 public i8 = -1;	</li>
+    <li>int public i256 = 456;	</li>
+    <li>int public i = -123;	</li>
+    <li> address public addr = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;</li>
+    <p> <strong> Default values </strong> </p>
+    <li>bool public defaultBoo; // false	</li>										
+    <li>uint public defaultUint; // 0 		</li>										
+    <li>int public defaultInt; // 0 		</li>										
+    <li>address public defaultAddr; // 0x0000000000000000000000000000000000000000 (42 Caracteres con todo y el 0x)</li>
+</ol>   
 
