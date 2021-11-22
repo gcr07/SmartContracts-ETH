@@ -38,6 +38,18 @@ Local variables (in functions) of value types (e. g. uint32) always in stack<br>
   
 <p> Fuente: https://dlt-repo.net/storage-vs-memory-vs-stack-in-solidity-ethereum/ </p>
 
+<h2> La direccion 0x00000 </h2>
+
+<p> En realidad, no es cierto que una transacción de creación de contrato tenga un campo "para" configurado en la dirección cero (es decir, 0x00 ... 000). Este es un error fácil de cometer (y yo también lo cometí), ya que se describe de esa manera en muchos recursos. </p>
+
+<p> The passage you cite from the Solidity docs were updated to state this:
+
+Si la cuenta de destino no está configurada (la transacción no tiene un destinatario o el destinatario está configurado como nulo), la transacción crea un nuevo contrato. Como ya se mencionó, la dirección de ese contrato no es la dirección cero sino una dirección derivada del remitente y su número de transacciones enviadas (el "nonce"). <strong (por ejemplo, emisor es un sinónimo de remitente) </strong> </p>
+
+<p> Entonces puede ver que se dieron cuenta en algún momento de que el campo del destinatario debería estar vacío. De hecho, miré las transacciones de creación serializadas y encontré 0x80 allí en lugar de una dirección cero RLP-ed. </p> 
+
+<p> De hecho, 0x80 es la codificación RLP de una matriz de bytes vacía, que es lo que el Yellow Paper afirma que es el destinatario de la creación de un contrato: </p> 
+<p> <strong> Fuente: https://stackoverflow.com/questions/48219716/what-is-address0-in-solidity </strong> </p> 
 <h2> License Identifier </h2> 
 
 <p> El compilador Solidity fomenta el uso de identificadores de licencia SPDX legibles por máquina. Cada archivo de origen debe comenzar con un comentario que indique su licencia: // SPDX-License-Identifier: MIT </p>
