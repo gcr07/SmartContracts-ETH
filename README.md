@@ -54,6 +54,7 @@ Local variables (in functions) of value types (e. g. uint32) always in stack<br>
     <li>int public i256 = 456;	</li>
     <li>int public i = -123;	</li>
     <li> address public addr = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;</li>
+  <br>
     <p> <strong> Default values </strong> </p>
     <li>bool public defaultBoo; // false	</li>										
     <li>uint public defaultUint; // 0 		</li>										
