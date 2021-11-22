@@ -62,3 +62,95 @@ Local variables (in functions) of value types (e. g. uint32) always in stack<br>
     <li>address public defaultAddr; // 0x0000000000000000000000000000000000000000 (42 Caracteres con todo y el 0x)</li>
 </ol>   
 
+<h2> Structure of a Contract </h2> 
+
+<p> Contracts in Solidity are similar to classes in object-oriented languages. Each contract can contain declarations of State Variables, Functions, Function Modifiers, Events, Errors, Struct Types and Enum Types. Furthermore, contracts can inherit from other contracts. </p>
+
+<h3> State Variables </h3>
+
+
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.4.0 <0.9.0;
+
+contract SimpleStorage {
+    uint storedData; // State variable
+    // ...
+}
+
+
+```
+
+
+<h3>  Functions </h3> 
+
+<p> Functions are the executable units of code. Functions are usually defined inside a contract, but they can also be defined outside of contracts. </p>
+
+<h3> Function Modifiers </h3>
+
+<p> Modifiers can be used to change the behaviour of functions in a declarative way. For example, you can use a modifier to automatically check a condition prior to executing the function. </p>
+
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.4.22 <0.9.0;
+
+contract Purchase {
+    address public seller;
+
+    modifier onlySeller() { // Modifier
+        require(
+            msg.sender == seller,
+            "Only seller can call this."
+        );
+        _;
+    }
+
+    function abort() public view onlySeller { // Modifier usage
+        // ...
+    }
+}
+
+```
+<h3> Events </h3> 
+
+<p> Events are convenience interfaces with the EVM logging facilities.</p> 
+
+<h3> Errors </h3> 
+
+<p> Los errores le permiten definir nombres descriptivos y datos para situaciones de falla. Los errores se pueden utilizar en declaraciones de reversión. </p> 
+
+<h3> Struct Types </h3> 
+
+<p> Structs are custom defined types that can group several variables (see Structs in types section). </p> 
+
+```
+
+
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.4.0 <0.9.0;
+
+contract Ballot {
+    struct Voter { // Struct
+        uint weight;
+        bool voted;
+        address delegate;
+        uint vote;
+    }
+}
+
+
+```
+
+<h3> Enum Types </h3> 
+
+<p> Enums can be used to create custom types with a finite set of ‘constant values’ (see Enums in types section). </p>
+
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.4.0 <0.9.0;
+
+contract Purchase {
+    enum State { Created, Locked, Inactive } // Enum
+}
+
+```
