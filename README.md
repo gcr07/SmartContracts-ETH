@@ -38,13 +38,13 @@ Local variables (in functions) of value types (e. g. uint32) always in stack<br>
   
 <p> Fuente: https://dlt-repo.net/storage-vs-memory-vs-stack-in-solidity-ethereum/ </p>
 
-<h1> License Identifier </h1> 
+<h2> License Identifier </h2> 
 
 <p> El compilador Solidity fomenta el uso de identificadores de licencia SPDX legibles por máquina. Cada archivo de origen debe comenzar con un comentario que indique su licencia: // SPDX-License-Identifier: MIT </p>
 
 <p> If you do not want to specify a license or if the source code is not open-source, please use the special value UNLICENSED </p> 
 
-<h1> Data Types </h1> 
+<h2> Data Types </h2> 
 
 <ol> 
   <li> uint8 public u8 = 1;	</li>
