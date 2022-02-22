@@ -166,3 +166,56 @@ contract Purchase {
 }
 
 ```
+
+# Mastering Ethereum by Andreas
+
+### Ropsten Test Network
+>Ethereum public test blockchain and network. ETH on this network has no value.
+
+
+### Rinkeby Test Network
+>Ethereum public test blockchain and network, using the Clique consensus protocol with proof of authority (federated signing). ETH on this network has no value.
+
+Localhost 8545
+Connects to a node running on the same computer as the browser. The node can be part of any public blockchain (main or testnet), or a private testnet.
+
+Custom RPC
+Allows you to connect MetaMask to any node with a Geth-compatible Remote Procedure Call (RPC) interface. The node can be part of any public or private blockchain.
+
+### Externally Owned Accounts (EOAs) and Contracts
+
+Son las cuentas que tienen claves privadas
+
+### Contracts accounts
+
+Son las que pertenecen a contratos inteligentes y no tienen claves privadas
+
+Contracts have addresses, just like EOAs. Contracts can also send and receive ether, just like EOAs. However, when a transaction destination is a contract address, it causes that contract to run in the EVM, using the transaction, and the transaction’s data, as its input. In addition to ether, transactions can contain data indicating which specific function in the contract to run and what parameters to pass to that function. In this way, transactions can call functions within contracts.
+
+### ZERO Address 
+
+Registering a contract on the blockchain involves creating a special transaction whose destination is the address 0x0000000000000000000000000000000000000000, also known as the zero address. The zero address is a special address that tells the Ethereum blockchain that you want to register a contract. Fortunately, the Remix IDE will handle all of that for you and send the transaction to MetaMask.
+
+### Internal Transaccion 
+
+>Remember that all currency values in Ethereum are denominated in wei internally,
+
+
+It is an internal transaction (also called a message).
+
+Where’s the outgoing withdrawal? A new tab has appeared on the contract’s address history page, named Internal Transactions. Because the 0.1 ether transfer originated from the contract code, it is an internal transaction (also called a message). Click on that tab to see it (see Etherscan shows the internal transaction transferring ether out from the contract).
+
+
+This "internal transaction" was sent by the contract in this line of code (from the withdraw function in Faucet.sol):
+
+`msg.sender.transfer(withdraw_amount);`
+
+
+
+
+
+
+
+
+
+
