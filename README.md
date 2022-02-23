@@ -211,11 +211,18 @@ This "internal transaction" was sent by the contract in this line of code (from 
 `msg.sender.transfer(withdraw_amount);`
 
 
+## Transaction Gas (Gas price, Gas limit)
 
+El gas no es éter, es una moneda virtual separada con su propio tipo de cambio frente al éter. Ethereum usa gas para controlar la cantidad de recursos que puede usar una transacción, ya que será procesada en miles de computadoras alrededor del mundo.
 
+El campo gasPrice en una transacción permite que el originador de la transacción establezca el precio que está dispuesto a pagar a cambio del gas.
 
+Las billeteras pueden ajustar el precio del gas en las transacciones que originan para lograr una confirmación más rápida de las transacciones. Cuanto mayor sea el precio del gas, más rápido se confirmará la transacción.
 
+Para pagos simples, es decir, transacciones que transfieren éter de un ***EOA a otro EOA***, la cantidad de gas necesaria se fija en ***21 000 unidades de gas.***
 
+Por lo tanto para calular cuanto ether va a costar se va a multiplicar 21000(cantidad de gas para transccion de EOA a EOA osea simple)por el Gas Price.
 
-
+Dicho en otras palabras
+>Con el límite de GAS, usted especifica cuántas unidades de GAS desea utilizar para una transacción. 21000 suele ser suficiente para las transferencias sencillas. El precio del GAS se expresa en ***GWEI***
 
