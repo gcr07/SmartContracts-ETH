@@ -169,6 +169,21 @@ contract Purchase {
 
 # Mastering Ethereum by Andreas
 
+## Unidades 
+
+| Value (in wei)	| Exponent	| Common name	| SI name|
+| --------------- | ----------|------------ | -------|
+|1 |1| wei |Wei|
+|1,000|10^3|Babbage|Kilowei or femtoether|
+|1,000,000|10^6|Lovelace|Megawei or picoether|
+|1,000,000,000|10^9|Shannon|Gigawei or nanoether|
+|1,000,000,000,000|10^12|Szabo|Microether or micro|
+|1,000,000,000,000,000|10^15|Finney|Milliether or milli|
+|1,000,000,000,000,000,000|10^18|Ether|Ether|
+|1,000,000,000,000,000,000,000|10^21|Grand|Kiloether|
+|1,000,000,000,000,000,000,000,000|10^24||Megaether|
+
+
 ### Ropsten Test Network
 >Ethereum public test blockchain and network. ETH on this network has no value.
 
@@ -225,4 +240,17 @@ Por lo tanto para calular cuanto ether va a costar se va a multiplicar 21000(can
 
 Dicho en otras palabras
 >Con el límite de GAS, usted especifica cuántas unidades de GAS desea utilizar para una transacción. 21000 suele ser suficiente para las transferencias sencillas. El precio del GAS se expresa en ***GWEI***
+
+### Destinatario de la transacción (Transaction Recipient)
+
+El destinatario de una transacción se especifica en el campo para. Este contiene una dirección Ethereum de ***20 bytes***. La dirección puede ser un EOA o una dirección de contrato.( este campo no se valida)
+
+>El protocolo Ethereum no valida las direcciones de los destinatarios en las transacciones. Puede enviar a una dirección que no tiene una clave privada o contrato correspondiente, por lo tanto, "quema" el éter, haciéndolo inutilizable para siempre.La validación debe realizarse en el nivel de la interfaz de usuario.
+
+### Transaction Value and Data
+
+La "carga útil" principal de una transacción está contenida en dos campos: valor y datos. Las transacciones pueden tener valor y datos, solo valor, solo datos o ni valor ni datos. Las cuatro combinaciones son válidas.
+
+Una transacción con solo valor es un pago. Una transacción con solo datos es una invocación. Una transacción con valor y datos es tanto un pago como una invocación. Una transacción sin valor ni datos, ¡bueno, eso probablemente sea solo una pérdida de gasolina! Pero todavía es posible.
+
 
