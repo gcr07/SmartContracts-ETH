@@ -245,12 +245,19 @@ Dicho en otras palabras
 
 El destinatario de una transacción se especifica en el campo para. Este contiene una dirección Ethereum de ***20 bytes***. La dirección puede ser un EOA o una dirección de contrato.( este campo no se valida)
 
->El protocolo Ethereum no valida las direcciones de los destinatarios en las transacciones. Puede enviar a una dirección que no tiene una clave privada o contrato correspondiente, por lo tanto, "quema" el éter, haciéndolo inutilizable para siempre.La validación debe realizarse en el nivel de la interfaz de usuario.
+>El protocolo Ethereum no valida las direcciones de los destinatarios en las transacciones. Puede enviar a una dirección que no tiene una clave privada o contrato correspondiente, por lo tanto, "quema" el éter, haciéndolo inutilizable para siempre.La validación debe realizarse en el nivel de la interfaz de usuario
+
 
 ### Transaction Value and Data
 
 La "carga útil" principal de una transacción está contenida en dos campos: valor y datos. Las transacciones pueden tener valor y datos, solo valor, solo datos o ni valor ni datos. Las cuatro combinaciones son válidas.
 
 Una transacción con solo valor es un pago. Una transacción con solo datos es una invocación. Una transacción con valor y datos es tanto un pago como una invocación. Una transacción sin valor ni datos, ¡bueno, eso probablemente sea solo una pérdida de gasolina! Pero todavía es posible.
+
+### Wallet vs Account cual es la diferencia
+
+>What is the difference between an account and a wallet? An account is a subsection of wallets that allows you to separate funds according to use-case without the need to create multiple new wallets. ... Accounts are tied to the wallet in which they are created. The recovery phrase for your wallet unlocks access to all accounts inside that wallet.
+
+Dicho en mis palabras dentro de metamaks( que es una wallet) se pueden tener divididos los fondos en cuentas tal y como pasa para loq ue juegan axie infinity y dividen en cuentas a sus becados.
 
 
