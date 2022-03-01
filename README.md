@@ -254,6 +254,8 @@ La "carga útil" principal de una transacción está contenida en dos campos: va
 
 Una transacción con solo valor es un pago. Una transacción con solo datos es una invocación. Una transacción con valor y datos es tanto un pago como una invocación. Una transacción sin valor ni datos, ¡bueno, eso probablemente sea solo una pérdida de gasolina! Pero todavía es posible.
 
+
+
 ### Wallet vs Account cual es la diferencia
 
 >What is the difference between an account and a wallet? An account is a subsection of wallets that allows you to separate funds according to use-case without the need to create multiple new wallets. ... Accounts are tied to the wallet in which they are created. The recovery phrase for your wallet unlocks access to all accounts inside that wallet.
@@ -319,3 +321,59 @@ contract test {
 ]
 
 ```
+## En la practica como son los ABI
+
+>The data payload sent to an ABI-compatible contract (which you can assume all contracts are) is a hex-serialized encoding of:
+
+### A function selector
+The first 4 bytes of the Keccak-256 hash of the function’s prototype. This allows the contract to unambiguously identify which function you wish to invoke.
+
+### The function arguments
+The function’s arguments, encoded according to the rules for the various elementary types defined in the ABI specification.
+
+In [solidity_faucet_example], we defined a function for withdrawals:
+
+```
+function withdraw(uint withdraw_amount) public {
+```
+
+>The prototype of a function is defined as the string containing the name of the function, followed by the data types of each of its arguments, enclosed in parentheses and separated by commas. The function name here is withdraw and it takes a single argument that is a uint (which is an alias for uint256), so the prototype of withdraw would be:
+
+```
+withdraw(uint256)
+```
+
+>Let’s calculate the Keccak-256 hash of this string:
+
+```
+> web3.utils.sha3("withdraw(uint256)");
+'0x2e1a7d4d13322e7b96f9a57413e1525c250fb7a9021cf91d1540d5b69f16a49f'
+
+```
+
+>The first 4 bytes of the hash are 0x2e1a7d4d. That’s our "function selector" value, which will tell the contract which function we want to call.
+Next, let’s calculate a value to pass as the argument withdraw_amount. We want to withdraw 0.01 ether. Let’s encode that to a hex-serialized big-endian unsigned 256-bit integer, denominated in wei:
+
+```
+> withdraw_amount = web3.utils.toWei(0.01, "ether");
+'10000000000000000'
+> withdraw_amount_hex = web3.utils.toHex(withdraw_amount);
+'0x2386f26fc10000'
+
+```
+
+>Now, we add the function selector to the amount (padded to 32 bytes):
+
+```
+2e1a7d4d000000000000000000000000000000000000000000000000002386f26fc10000
+
+Funtion selector + 32 padding + The function arguments //el padding tiene que dar 32 con todo y argumentos
+
+python3
+a = '000000000000000000000000000000000000000000000000002386f26fc10000'
+print (len(a))
+>64 ( Recordar que en hex cada caracter es 4bits osea que 1 byte seria 2 digitos)
+
+
+```
+
