@@ -260,4 +260,62 @@ Una transacción con solo valor es un pago. Una transacción con solo datos es u
 
 Dicho en mis palabras dentro de metamaks( que es una wallet) se pueden tener divididos los fondos en cuentas tal y como pasa para loq ue juegan axie infinity y dividen en cuentas a sus becados.
 
+## Que es ABI (Application Binary Interface) en ETH
 
+>To access functions defined in high-level languages, users need to translate names and arguments into byte representations for byte code to work with it. To interpret the bytes sent in response, users need to convert back to the tuple of return values defined in higher-level languages. Languages that compile for the EVM maintain strict conventions about these conversions, but in order to perform them, one must know the precise names and types associated with the operations. The ABI documents these names and types precisely, easily parseable format, doing translations between human-intended method calls and smart-contract operations discoverable and reliable.
+
+
+>It is very similar to API (Application Program Interface), a human-readable representation of a code’s interface. ABI defines the methods and structures used to interact with the binary contract, just like API does but on a lower-level. The ABI indicates the caller of the function to encode the needed information like function signatures and variable declarations in a format that the EVM can understand to call that function in bytecode; this is called ABI encoding. 
+
+En mis palabras es un JSON que contiene informacion del contrato como nombre de las funciones si son pagables los inputs etc.
+
+
+#### Ejemplo: Increment.sol 
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.0;
+
+contract test {
+    
+    uint256 private count = 0;
+
+    function increment() public {
+        count += 1;
+    }
+    
+    function getCount() public view returns (uint256) {
+        return count;
+    }
+
+}
+```
+>solcjs test.sol --abi
+
+### ABI generado
+
+```
+[
+	{
+		"inputs": [],
+		"name": "getCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "increment",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+
+```
