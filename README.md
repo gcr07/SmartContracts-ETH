@@ -374,6 +374,39 @@ a = '000000000000000000000000000000000000000000000000002386f26fc10000'
 print (len(a))
 >64 ( Recordar que en hex cada caracter es 4bits osea que 1 byte seria 2 digitos)
 
+```
+### Crear un contrato
+
+>Un caso especial que debemos mencionar es una transacción que crea un nuevo contrato en la cadena de bloques, desplegándolo para uso futuro. Las transacciones de creación de contratos se envían a una dirección de destino especial denominada dirección cero; el campo para en una transacción de registro de contrato contiene la dirección 0x0. Esta dirección no representa ni un EOA (no hay un par de claves pública-privada correspondiente) ni un contrato. Nunca puede gastar éter o iniciar una transacción. Solo se usa como destino, con el significado especial "crear este contrato".
+
+>Una transacción de creación de contrato solo necesita contener una carga útil de datos que contenga el código de bytes compilado que creará el contrato. El único efecto de esta transacción es crear el contrato. Puede incluir una cantidad de éter en el campo de valor si desea configurar el nuevo contrato con un saldo inicial, pero eso es completamente opcional. Si envía un valor (ether) a la dirección de creación del contrato sin una carga útil de datos (sin contrato), entonces el efecto es el mismo que enviar a una dirección de grabación: no hay contrato para acreditar, por lo que se pierde el ether.
+
+
+## Remix ETH 
+
+Nos permite obtener tanto el ABI como el byte code nos vamos a donde se compila el contrato y hasta abajo dice ABI BYTES
+
+***Donde object es el bytecode que se inyecta al crear un contrato***
+```
+{
+   "linkReferences": {},
+   "object": "608060405234801561001057600080fd5b5060f48061001f6000396000f3fe608060405260043610601f5760003560e01c80632e1a7d4d14602a576025565b36602557005b600080fd5b348015603557600080fd5b50605f60048036036020811015604a57600080fd5b81019080803590602001909291905050506061565b005b67016345785d8a0000811115607557600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015801560ba573d6000803e3d6000fd5b505056fea26469706673582212201ae4c9aae934d358c2385d58ca2372148b40b09998cb62ec6f16861a223245c464736f6c63430006040033",
+   "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xF4 DUP1 PUSH2 0x1F PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x1F JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x2E1A7D4D EQ PUSH1 0x2A JUMPI PUSH1 0x25 JUMP JUMPDEST CALLDATASIZE PUSH1 0x25 JUMPI STOP JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE DUP1 ISZERO PUSH1 0x35 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x5F PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x20 DUP2 LT ISZERO PUSH1 0x4A JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 ADD SWAP1 DUP1 DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 ADD SWAP1 SWAP3 SWAP2 SWAP1 POP POP POP PUSH1 0x61 JUMP JUMPDEST STOP JUMPDEST PUSH8 0x16345785D8A0000 DUP2 GT ISZERO PUSH1 0x75 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST CALLER PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND PUSH2 0x8FC DUP3 SWAP1 DUP2 ISZERO MUL SWAP1 PUSH1 0x40 MLOAD PUSH1 0x0 PUSH1 0x40 MLOAD DUP1 DUP4 SUB DUP2 DUP6 DUP9 DUP9 CALL SWAP4 POP POP POP POP ISZERO DUP1 ISZERO PUSH1 0xBA JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 BYTE 0xE4 0xC9 0xAA 0xE9 CALLVALUE 0xD3 PC 0xC2 CODESIZE 0x5D PC 0xCA 0x23 PUSH19 0x148B40B09998CB62EC6F16861A223245C46473 PUSH16 0x6C634300060400330000000000000000 ",
+   "sourceMap": "162:386:0:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;162:386:0;;;;;;;"
+}
 
 ```
+
+## Creacion de un contrato a mano con web3
+
+
+
+
+
+
+
+
+
+
+
 
