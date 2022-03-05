@@ -401,12 +401,51 @@ Nos permite obtener tanto el ABI como el byte code nos vamos a donde se compila 
 
 
 
+## Firmas Digitales
 
 
+#### Keccak 256
+
+SHA3 ​​utiliza el algoritmo Keccak. En muchos casos, Keccak y SHA3 son sinónimos. Sin embargo, cuando SHA3 finalmente se estandarizó en agosto de 2015, NIST ajustó el algoritmo de relleno. El SHA3 estándar y el algoritmo Keccak original son diferentes. En el código temprano relacionado con Ethereum, SHA3 se usa comúnmente para referirse a Keccak256. Para evitar confusión con el estándar NIST SHA3, el código actual usa directamente Keccak256 como el nombre de la función.
+
+Para aclarar que Ethereum usa KECCAK-256 en lugar de la función hash SHA-3 estandarizada por NIST, se ha introducido Solidity 0.4.3keccak256 
+
+## Firma de una Transaccion pasos
+
+Para producir una transacción válida, el emisor debe firmar digitalmente el mensaje, utilizando el algoritmo de firma digital de curva elíptica. Cuando decimos "firmar la transacción", en realidad queremos decir "firmar el hash Keccak-256 de los datos de transacción serializados por RLP". La firma se aplica al hash de los datos de la transacción, no a la transacción en sí.
+
+>To sign a transaction in Ethereum, the originator must:
+
+1. Create a transaction data structure, containing nine fields: nonce, gasPrice, gasLimit, to, value, data, chainID, 0, 0.
+
+2. Produce an RLP-encoded serialized message of the transaction data structure.
+
+3. Compute the Keccak-256 hash of this serialized message.
+
+4. Compute the ECDSA signature, signing the hash with the originating EOA’s private key.
+
+5. Append the ECDSA signature’s computed v, r, and s values to the transaction.
 
 
+## Resumen 
+
+S i g(Firma) = F sig ( HASH DE LA TX RLP encoded transaccion , private key  )
+
+***Regresa valores***
+
+ (r, s) 
+ 
+ v es un valor que surgio de un hardfork para  identificar la red y evitar ataques EIP-155
+ >The special signature variable v indicates two things: the chain ID and the recovery identifier to help the ECDSArecover function check the signature. 
+ >To make things more efficient, the transaction signature includes a prefix value v, which tells us which of the two possible R values is the ephemeral public key.
 
 
+***En general saber estos pasos te ayuda a entender el codigo JS pero por ejemplo el valor v y los r,s los agrega automaticamente***
 
+## web3.eth.sendTransaction vs web3.eth.sendSignedTransaction
 
+>Una vez que se firma una transacción, está lista para transmitirse a la red Ethereum. Los tres pasos de crear, firmar y transmitir una transacción normalmente ocurren como una sola operación, por ejemplo, usando web3.eth.sendTransaction. Sin embargo, como vio en Creación y firma de transacciones sin procesar, puede crear y firmar la transacción en dos pasos separados. Una vez que tenga una transacción firmada, puede transmitirla usando web3.eth.sendSignedTransaction, que toma una transacción firmada y codificada en hexadecimal y la transmite en la red Ethereum.
 
+>¿Por qué querría separar la firma y la transmisión de transacciones? La razón más común es la seguridad. La computadora que firma una transacción debe tener claves privadas desbloqueadas cargadas en la memoria. La computadora que realiza la transmisión debe estar conectada a Internet (y ejecutar un cliente Ethereum). Si estas dos funciones están en una computadora, entonces tiene claves privadas en un sistema en línea, lo cual es bastante peligroso. Separar las funciones de firmar y transmitir y realizarlas en diferentes máquinas (en un dispositivo fuera de línea y en línea, respectivamente) se denomina firma fuera de línea y es una práctica de seguridad común.
+ 
+ 
