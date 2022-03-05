@@ -404,7 +404,9 @@ Nos permite obtener tanto el ABI como el byte code nos vamos a donde se compila 
 ## Firmas Digitales
 
 
-#### Keccak 256
+#### Keccak 256 
+
+>En node npm install keccak256
 
 SHA3 ​​utiliza el algoritmo Keccak. En muchos casos, Keccak y SHA3 son sinónimos. Sin embargo, cuando SHA3 finalmente se estandarizó en agosto de 2015, NIST ajustó el algoritmo de relleno. El SHA3 estándar y el algoritmo Keccak original son diferentes. En el código temprano relacionado con Ethereum, SHA3 se usa comúnmente para referirse a Keccak256. Para evitar confusión con el estándar NIST SHA3, el código actual usa directamente Keccak256 como el nombre de la función.
 
