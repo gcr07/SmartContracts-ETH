@@ -171,6 +171,12 @@ contract Purchase {
 
 ```
 
+
+##  Soluciones de Capa 2
+
+Las soluciones principales de la capa 2 son: ***Zero-Knowledge Rollups***, o “rollups de conocimiento cero”, y ***Optimistic Rollups***, o “rollups optimistas”.
+
+
 # Mastering Ethereum by Andreas
 
 ## Unidades 
