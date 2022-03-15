@@ -8,6 +8,10 @@ Este repositorio son las notas de lo que voy aprendiendo si ves algo mal levanta
 
 <p> La dirección de una cuenta externa se determina a partir de la clave pública, mientras que la dirección de un contrato se determina en el momento en que se crea el contrato. </p>
 
+## Private Key -> Public Key -> Address
+
+Primero se crea la llave privada a la cual le corresponde una llave publica y de es ya sale una direccion.
+
 <h2> ETHER y WEI </h2> 
 
 <p> Además, cada cuenta tiene un saldo en Ether (en "Wei" para ser exactos, 1 ether es 10 ** 18 wei) que se puede modificar enviando transacciones que incluyan Ether.</p> 
