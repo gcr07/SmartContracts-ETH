@@ -22,7 +22,10 @@ function getVal() public view returns(uint256){
 
 }
 
+// pure VS view ( NO Hacen transacciones)
 
+//pure se usa cuando el contrato va a hacer algun tipo de matematica( segun el curso)
+// view se usa cuando la funcion solo va a leer datos.
 
 // https://solidity-by-example.org/visibility/
 
