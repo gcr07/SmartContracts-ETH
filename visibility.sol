@@ -1,8 +1,26 @@
 
+// SPDX-License-Identifier: MIT
 
+pragma  solidity ^0.8.6;// ^el simbolo nos dice que los ultimos numeros son lo que pueden cambiar los demas no
 
+contract Base{
 
+uint256 public var1 = 100;
+uint256 private var2 =200;
 
+function opera() private{
+    var2 = var2 +1;
+}
+
+function increment() public  {
+opera();
+}
+
+function getVal() public view returns(uint256){
+    return var2;
+}
+
+}
 
 
 
