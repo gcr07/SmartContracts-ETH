@@ -28,17 +28,16 @@ function addPerson( string memory _name, uint256 _favoriteNumber) public
 
 
 
-
-
-
-
-
-
-
 /* Memory data will be only storage during the execution of the function or the contract call
 
 
 Storage los datos va a persistir aun despues de que la funcion se ejecute.(EN OTRAS palabras store for ever)
+
+REMIX JavaScript VM (London) es para trabar con la implementacion de REMIX
+
+INJECTED WE3   Es para trabajar con metamask e desplegar el codigo en una teste net como robstein o rinkeby
+
+WEB 3 PROVIDER Es para  que usemos nuestro propio blockchain como garnache o bien nuestro propio probedor
 
 
 */
