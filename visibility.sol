@@ -4,7 +4,7 @@ pragma  solidity ^0.8.6;// ^el simbolo nos dice que los ultimos numeros son lo q
 
 contract Base{
 
-uint256 public var1 = 100;
+uint256 public var1 = 100; // variables de estado 
 uint256 private var2 =200;
 
 
@@ -48,5 +48,6 @@ function test(uint var4) public pure returns(uint256)
  internally or by derived contracts. private
   Private functions/ Variables can only be used internally
     and not even by derived contracts.
-
+Las funciones en REMIX en azul no modifican nada
+Las Funcioenes en REMIX en naranja si modifica las variables de estado
 */
