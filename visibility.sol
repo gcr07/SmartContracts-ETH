@@ -1,4 +1,3 @@
-
 // SPDX-License-Identifier: MIT
 
 pragma  solidity ^0.8.6;// ^el simbolo nos dice que los ultimos numeros son lo que pueden cambiar los demas no
@@ -7,6 +6,7 @@ contract Base{
 
 uint256 public var1 = 100;
 uint256 private var2 =200;
+
 
 function opera() private{
     var2 = var2 +1;
@@ -18,6 +18,21 @@ opera();
 
 function getVal() public view returns(uint256){
     return var2;
+}
+
+function example() public   {
+    
+    var1 + var1;
+}
+
+  function externalFunc() external pure returns (string memory) {
+        return "external function called";
+    }
+
+function test(uint var4) public pure returns(uint256)
+{ uint256 var5=0;
+    var5 = var4 + var4;
+    return var5;
 }
 
 }
