@@ -55,4 +55,8 @@ NOTAS sobre pure
 
 Solidity also contains pure functions, which means you're not even accessing any data in the app. Consider the following:
 
+function _multiply(uint a, uint b) private pure returns (uint) {
+  return a * b;
+}
+
 This function doesn't even read from the state of the app — its return value depends only on its function parameters. So in this case we would declare the function as pure.
