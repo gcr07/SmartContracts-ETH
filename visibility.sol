@@ -51,3 +51,8 @@ function test(uint var4) public pure returns(uint256)
 Las funciones en REMIX en azul no modifican nada
 Las Funcioenes en REMIX en naranja si modifica las variables de estado
 */
+NOTAS sobre pure 
+
+Solidity also contains pure functions, which means you're not even accessing any data in the app. Consider the following:
+
+This function doesn't even read from the state of the app — its return value depends only on its function parameters. So in this case we would declare the function as pure.
