@@ -59,4 +59,12 @@ function _multiply(uint a, uint b) private pure returns (uint) {
   return a * b;
 }
 
-This function doesn't even read from the state of the app — its return value depends only on its function parameters. So in this case we would declare the function as pure.
+This function doesn't even read from the state of the app — its return value depends only on its function parameters. So in this case we would declare the function 
+as pure.
+
+INTERNAL
+
+internal is the default visibility for state variables. Internal functions and state variables can both be accessed from within the same contract and in deriving
+
+https://blog.oliverjumpertz.dev/solidity-visibility-modifiers
+contracts. They aren't accessible from the outside.
