@@ -462,7 +462,7 @@ S i g(Firma) = F sig ( HASH DE LA TX RLP encoded transaccion , private key  )
  
  # Solidity
  
- ´´´
+ ´´´ bash
  
  function getKitty(uint256 _id) external view returns (
     bool isGestating,
