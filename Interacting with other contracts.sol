@@ -14,6 +14,6 @@ contract LuckyNumber {
 }
 
 
-contract NumberInterface {
+contract NumberInterface { // Importante se crea un contrato nuevo
   function getNum(address _myAddress) public view returns (uint);// no tiene llaves ni nada
 }
