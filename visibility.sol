@@ -68,3 +68,9 @@ internal is the default visibility for state variables. Internal functions and s
 
 https://blog.oliverjumpertz.dev/solidity-visibility-modifiers
 contracts. They aren't accessible from the outside.
+
+EXTERNAL
+
+external is similar to public, except that these functions can ONLY be called outside the contract — they can't be called by other functions inside that contract.
+We'll talk about why you might want to use external vs public later.
+
