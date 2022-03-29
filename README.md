@@ -496,3 +496,12 @@ pragma solidity 0.8.0;
  ```
  
  >The function looks a bit different than we're used to. You can see it returns... a bunch of different values. If you're coming from a programming language like Javascript, this is different — in Solidity you can return more than one value from a function.
+
+# OpenZeppelin's Ownable contract
+
+>Below is the Ownable contract taken from the OpenZeppelin Solidity library. OpenZeppelin is a library of secure and community-vetted smart contracts that you can use in your own DApps. After this lesson, we highly recommend you check out their site to further your learning!
+
+>https://docs.openzeppelin.com/
+>https://docs.openzeppelin.com/contracts/3.x/
+
+
