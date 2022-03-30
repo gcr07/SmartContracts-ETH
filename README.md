@@ -506,4 +506,7 @@ pragma solidity 0.8.0;
 
 ## Reglas de convencion de escritura para Solidity
 
+funciones privadas o internas llevan un _ 
+Funciones se escriben como javscript con el cammel.. esteEsUnEjemplo
+
 https://solidity-es.readthedocs.io/es/latest/style-guide.html
