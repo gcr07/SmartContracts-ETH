@@ -504,4 +504,6 @@ pragma solidity 0.8.0;
 >https://docs.openzeppelin.com/
 >https://docs.openzeppelin.com/contracts/3.x/
 
+## Reglas de convencion de escritura para Solidity
 
+https://solidity-es.readthedocs.io/es/latest/style-guide.html
