@@ -516,3 +516,20 @@ funciones privadas o internas llevan un _
 Funciones se escriben como javscript con el cammel.. esteEsUnEjemplo
 
 https://solidity-es.readthedocs.io/es/latest/style-guide.html
+
+## Resumen 
+
+>We have visibility modifiers that control when and where the function can be called from: private means it's only callable from other functions inside the contract; internal is like private but can also be called by contracts that inherit from this one; external can only be called outside the contract; and finally public can be called anywhere, both internally and externally.
+
+>We also have state modifiers, which tell us how the function interacts with the BlockChain: view tells us that by running the function, no data will be saved/changed. pure tells us that not only does the function not save any data to the blockchain, but it also doesn't read any data from the blockchain. Both of these don't cost any gas to call if they're called externally from outside the contract (but they do cost gas if called internally by another function).
+
+### The payable Modifier
+
+>payable functions are part of what makes Solidity and Ethereum so cool — they are a special type of function that can receive Ether.
+
+Let that sink in for a minute. When you call an API function on a normal web server, you can't send US dollars along with your function call — nor can you send Bitcoin.
+
+But in Ethereum, because both the money (Ether), the data (transaction payload), and the contract code itself all live on Ethereum, it's possible for you to call a function and pay money to the contract at the same time.
+
+This allows for some really interesting logic, like requiring a certain payment to the contract in order to execute a function.
+
