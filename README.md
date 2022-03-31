@@ -533,3 +533,11 @@ But in Ethereum, because both the money (Ether), the data (transaction payload),
 
 This allows for some really interesting logic, like requiring a certain payment to the contract in order to execute a function.
 
+##  Withdraws
+
+After you send Ether to a contract, it gets stored in the contract's Ethereum account, and it will be trapped there — unless you add a function to withdraw the Ether from the contract.
+
+You can write a function to withdraw Ether from the contract as follows
+
+
+
