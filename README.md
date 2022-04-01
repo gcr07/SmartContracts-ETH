@@ -550,3 +550,6 @@ Internally the smart contract usually has a mapping, mapping(address => uint256)
 
 So basically a token is just a contract that keeps track of who owns how much of that token, and some functions so those users can transfer their tokens to other addresses.
 
+###  ERC20 token
+
+>This means if you build an application that is capable of interacting with one ERC20 token, it's also capable of interacting with any ERC20 token. That way more tokens can easily be added to your app in the future without needing to be custom coded. You could simply plug in the new token contract address, and boom, your app has another token it can use.
