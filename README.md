@@ -539,5 +539,14 @@ After you send Ether to a contract, it gets stored in the contract's Ethereum ac
 
 You can write a function to withdraw Ether from the contract as follows
 
+ # Tokens on Ethereum
 
+
+If you've been in the Ethereum space for any amount of time, you've probably heard people talking about tokens — specifically ERC20 tokens.
+
+A token on Ethereum is basically just a smart contract that follows some common rules — namely it implements a standard set of functions that all other token contracts share, such as transferFrom(address _from, address _to, uint256 _tokenId) and balanceOf(address _owner).
+
+Internally the smart contract usually has a mapping, mapping(address => uint256) balances, that keeps track of how much balance each address has.
+
+So basically a token is just a contract that keeps track of who owns how much of that token, and some functions so those users can transfer their tokens to other addresses.
 
