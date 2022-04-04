@@ -585,3 +585,16 @@ A library is a special type of contract in Solidity. One of the things it is use
 ## assert
 
 assert is similar to require, where it will throw an error if false. ****The difference between assert and require is that require will refund the user the rest of their gas when a function fails, whereas assert will not. So most of the time you want to use require in your code; assert is typically used when something has gone horribly wrong with the code (like a uint overflow).***
+
+## natspec 
+
+The standard in the Solidity community is to use a format called natspec, which looks like this:
+
+***@title and @author are straightforward.
+
+***@notice explains to a user what the contract / function does. @dev is for explaining extra details to developers.
+
+**@param and @return are for describing what each parameter and return value of a function are for.
+
+Note that you don't always have to use all of these tags for every function — all tags are optional. But at the very least, leave a @dev note explaining what each function does.
+
