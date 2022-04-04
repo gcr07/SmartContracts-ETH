@@ -564,10 +564,11 @@ Let's say we have a uint8, which can only have 8 bits. That means the largest nu
 
 Take a look at the following code. What is number equal to at the end?
 
-´´´
+```
 uint8 number = 255;
 number++;
-´´´
+ ```
+ 
 In this case, we've caused it to overflow — so number is counterintuitively now equal to 0 even though we increased it. (If you add 1 to binary 11111111, it resets back to 00000000, like a clock going from 23:59 to 00:00).
 
 ## Underflows
