@@ -577,3 +577,6 @@ An underflow is similar, where if you subtract 1 from a uint8 that equals 0, it 
 
 While we're not using uint8 here, and it seems unlikely that a uint256 will overflow when incrementing by 1 each time (2^256 is a really big number), it's still good to put protections in our contract so that our DApp never has unexpected behavior in the future.
 
+## Library
+
+A library is a special type of contract in Solidity. One of the things it is useful for is to attach functions to native data types.
