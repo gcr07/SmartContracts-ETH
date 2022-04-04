@@ -580,3 +580,4 @@ While we're not using uint8 here, and it seems unlikely that a uint256 will over
 ## Library
 
 A library is a special type of contract in Solidity. One of the things it is useful for is to attach functions to native data types.
+>First we have the library keyword — libraries are similar to contracts but with a few differences. For our purposes, libraries allow us to use the using keyword, which automatically tacks on all of the library's methods to another data type:
