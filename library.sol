@@ -16,3 +16,17 @@ contract ZombieFactory is Ownable {
   uint cooldownTime = 1 days;
   
   }
+
+
+------------------------------------
+
+using SafeMath for uint;
+// now we can use these methods on any uint
+uint test = 2;
+test = test.mul(3); // test now equals 6
+test = test.add(5); // test now equals 11
+
+
+
+
+
