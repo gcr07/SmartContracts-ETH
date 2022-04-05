@@ -616,3 +616,23 @@ Ethereum nodes only speak a language called JSON-RPC, which isn't very human-rea
 
 ```
 
+Luckily, Web3.js hides these nasty queries below the surface, so you only need to interact with a convenient and easily readable JavaScript interface.
+
+Instead of needing to construct the above query, calling a function in your code will look something like this:
+
+```
+CryptoZombies.methods.createRandomZombie("Vitalik Nakamoto")
+  .send({ from: "0xb60e8dd61c5d32be8058bb8eb970870f07233155", gas: "3000000" })
+
+```
+
+# 2 Metodos para agregar la web3.js 
+
+## Metodo 1 
+
+Instalar el en proyecto de nodejs como lo he venido haciendo
+
+```
+// Using NPM
+npm install web3
+```
