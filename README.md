@@ -598,3 +598,21 @@ The standard in the Solidity community is to use a format called natspec, which 
 
 Note that you don't always have to use all of these tags for every function — all tags are optional. But at the very least, leave a @dev note explaining what each function does.
 
+## What is Web3.js?
+
+Biblioteca de JS que se usa para manejar la blockchain de ethereum se pueden llamar contratos intelegiente y muchas cosas mas como checar balances cuando se llama un smart contract se pasa la siguiente informacion.
+
+>The address of the smart contract
+>The function you want to call, and
+>The variables you want to pass to that function.
+
+Ethereum nodes only speak a language called JSON-RPC, which isn't very human-readable. A query to tell the node you want to call a function on a contract looks something like this:
+
+```
+
+// Yeah... Good luck writing all your function calls this way!
+// Scroll right ==>
+{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"from":"0xb60e8dd61c5d32be8058bb8eb970870f07233155","to":"0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas":"0x76c0","gasPrice":"0x9184e72a000","value":"0x9184e72a","data":"0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"}],"id":1}
+
+```
+
