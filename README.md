@@ -715,3 +715,45 @@ getZombieDetails(15)
 de nuestra funcion dentro del contrato la cual tenia un parametro address _owner y finalmente call llama a dicha funcion comon o se genera ninguna
 transaccion no se cobra gas y no se usa send.
 
+
+## Metamask & Accounts
+
+>MetaMask allows the user to manage multiple accounts in their extension.
+We can see which account is currently active on the injected web3 variable via:
+
+```
+var userAccount = web3.eth.accounts[0]
+```
+*** Ejemplo de llamar a send***
+
+```
+function feedOnKitty(zombieId, kittyId) {
+       
+        $("#txStatus").text("Eating a kitty. This may take a while...");
+       
+        return cryptoZombies.methods.feedOnKitty(zombieId, kittyId)
+        .send({ from: userAccount })
+        .on("receipt", function(receipt) {
+          $("#txStatus").text("Ate a kitty and spawned a new Zombie!");
+         
+          getZombiesByOwner(userAccount).then(displayZombies);
+        })
+        .on("error", function(error) {
+         
+          $("#txStatus").text(error);
+        });
+      }
+```
+***NOTA***
+Note: You can optionally specify gas and gasPrice when you call send, e.g. .send({ from: userAccount, gas: 3000000 }). If you don't specify this, MetaMask will let the user choose these values
+
+## Calling Payable Functions
+
+### Convertir ether to wei 
+
+```
+// This will convert 1 ETH to Wei
+web3js.utils.toWei("1");
+
+```
+
