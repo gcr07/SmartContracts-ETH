@@ -636,3 +636,24 @@ Instalar el en proyecto de nodejs como lo he venido haciendo
 // Using NPM
 npm install web3
 ```
+##  Web3 Providers
+Infura is a service that maintains a set of Ethereum nodes with a caching layer for fast reads, which you can access for free through their API. Using Infura as a provider, you can reliably send and receive messages to/from the Ethereum blockchain without needing to set up and maintain your own node. *** MOLARIS es otra opcion***
+
+```
+var web3 = new Web3(new Web3.providers.WebsocketProvider("wss://mainnet.infura.io/ws"));
+```
+
+Web3.js will need 2 things to talk to your contract: its address and its ABI.
+
+### ABI 
+
+>The other thing Web3.js will need to talk to your contract is its ABI.
+
+>ABI stands for Application Binary Interface. Basically it's a representation of your contracts' methods in JSON format that tells Web3.js how to format function calls in a way your contract will understand.
+
+>When you compile your contract to deploy to Ethereum (which we'll cover in Lesson 7), the Solidity compiler will give you the ABI, so you'll need to copy and save this in addition to the contract address.
+
+>Since we haven't covered deployment yet, for this lesson we've compiled the ABI for you and put it in a file named cryptozombies_abi.js, stored in variable called cryptoZombiesABI.
+
+>If we include cryptozombies_abi.js in our project, we'll be able to access the CryptoZombies ABI using that variable.
+
