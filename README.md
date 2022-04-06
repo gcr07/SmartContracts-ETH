@@ -598,6 +598,8 @@ The standard in the Solidity community is to use a format called natspec, which 
 
 Note that you don't always have to use all of these tags for every function — all tags are optional. But at the very least, leave a @dev note explaining what each function does.
 
+# WEB3
+
 ## What is Web3.js?
 
 Biblioteca de JS que se usa para manejar la blockchain de ethereum se pueden llamar contratos intelegiente y muchas cosas mas como checar balances cuando se llama un smart contract se pasa la siguiente informacion.
@@ -656,4 +658,60 @@ Web3.js will need 2 things to talk to your contract: its address and its ABI.
 >Since we haven't covered deployment yet, for this lesson we've compiled the ABI for you and put it in a file named cryptozombies_abi.js, stored in variable called cryptoZombiesABI.
 
 >If we include cryptozombies_abi.js in our project, we'll be able to access the CryptoZombies ABI using that variable.
+
+## Instantiating a Web3.js Contract
+
+```
+// Instantiate myContract
+var myContract = new web3js.eth.Contract(myABI, myContractAddress); //INSTANCIA
+
+```
+
+## Web3 Calling Contract Functions
+
+Our contract is all set up! Now we can use Web3.js to talk to it.
+
+Web3.js has two methods we will use to call functions on our contract: call and send.
+
+### Call
+call is used for view and pure functions. It only runs on the local node, and won't create a transaction on the blockchain.
+Using Web3.js, you would call a function named myMethod with the parameter 123 as follows:
+
+```
+myContract.methods.myMethod(123).call()
+```
+
+
+### Send
+send will create a transaction and change data on the blockchain. You'll need to use send for any functions that aren't view or pure.
+
+>Note: sending a transaction will require the user to pay gas, and will pop up their Metamask to prompt them to sign a transaction. When we use Metamask as our web3 provider, this all happens automatically when we call send(), and we don't need to do anything special in our code. Pretty cool!
+
+```
+myContract.methods.myMethod(123).send()
+```
+***Ejemplo***
+
+```
+function getZombieDetails(id) {
+  return cryptoZombies.methods.zombies(id).call()
+}
+
+// Call the function and do something with the result:
+getZombieDetails(15)
+.then(function(result) {
+  console.log("Zombie 15: " + JSON.stringify(result));
+});
+```
+
+```
+      function getZombiesByOwner(owner) {
+        return cryptoZombies.methods.getZombiesByOwner(owner).call
+      }
+      
+```
+
+*** Explicacion *** cryptoZombies es la instancia que apunta a nuestro contrato methods es de web3 y getZombiesByOwner(owner) es el nombre
+de nuestra funcion dentro del contrato la cual tenia un parametro address _owner y finalmente call llama a dicha funcion comon o se genera ninguna
+transaccion no se cobra gas y no se usa send.
 
