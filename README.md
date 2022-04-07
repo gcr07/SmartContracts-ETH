@@ -769,7 +769,18 @@ Para nosotros guardar todos los valores que regresa
 
 ```
  (uint80 roundId, int answer, uint startedAt, uint updatedAt, uint80 answeredInRound) = priceFeed.latestRoundData();
-``` 
+ 
+```
+
+Additionally, if there are variables that we are not going to use, it's often best practice to leave them as blanks, like so
+
+```
+ (,int price,,,) = priceFeed.latestRoundData();
+ ```
+ 
+
+
+
 ## Calling Payable Functions
 
 ### Convertir ether to wei 
