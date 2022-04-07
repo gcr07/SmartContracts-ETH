@@ -757,3 +757,45 @@ web3js.utils.toWei("1");
 
 ```
 
+### send to a payable function 
+
+```
+cryptoZombies.methods.levelUp(zombieId)
+.send({ from: userAccount, value: web3js.utils.toWei("0.001", "ether") })
+```
+
+## Subscribing to Events
+
+In Web3.js, you can subscribe to an event so your web3 provider triggers some logic in your code every time it fires:
+
+
+```
+cryptoZombies.events.NewZombie()
+.on("data", function(event) {
+  let zombie = event.returnValues;
+  // We can access this event's 3 return values on the `event.returnValues` object:
+  console.log("A new zombie was born!", zombie.zombieId, zombie.name, zombie.dna);
+}).on("error", console.error);
+``` 
+# Chainlink Data Feeds
+
+So what we want to do, is get our data from both a decentralized oracle network (DON) and decentralized data sources.
+
+>Chainlink is a framework for decentralized oracle networks (DONs), and is a way to get data in from multiple sources across multiple oracles. This DON aggregates data in a decentralized manner and places it on the blockchain in a smart contract (often referred to as a "price reference feed" or "data feed") for us to read from. So all we have to do, is read from a contract that the Chainlink network is constantly updating for us!
+
+>https://data.chain.link/
+
+### Para importar la interface de chainlink
+
+
+```
+pragma solidity ^0.6.7;
+
+import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
+
+
+contract PriceConsumerV3 {
+
+}
+```
+
