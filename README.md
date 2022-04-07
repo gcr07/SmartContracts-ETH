@@ -747,6 +747,29 @@ function feedOnKitty(zombieId, kittyId) {
 ***NOTA***
 Note: You can optionally specify gas and gasPrice when you call send, e.g. .send({ from: userAccount, gas: 3000000 }). If you don't specify this, MetaMask will let the user choose these values
 
+## Tuplas en Solidity
+
+A tuple is a way in Solidity to create a syntactic grouping of expressions
+
+***Ejemplo***
+
+```
+function latestRoundData()
+    external
+    view
+    returns (
+      uint80 roundId,
+      int256 answer,
+      uint256 startedAt,
+      uint256 updatedAt,
+      uint80 answeredInRound
+    );
+```
+Para nosotros guardar todos los valores que regresa 
+
+```
+ (uint80 roundId, int answer, uint startedAt, uint updatedAt, uint80 answeredInRound) = priceFeed.latestRoundData();
+``` 
 ## Calling Payable Functions
 
 ### Convertir ether to wei 
