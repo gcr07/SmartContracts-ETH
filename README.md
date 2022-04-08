@@ -836,3 +836,24 @@ contract PriceConsumerV3 {
 
 >https://docs.chain.link/docs/conceptual-overview/
 
+
+## Truffle
+
+Truffle es un conjunto de herramientas de programación orientado a smart contracts (contratos inteligentes) para desarrollar aplicaciones sostenibles y profesionales sobre la blockchain utilizando para ello la Máquina Virtual de Ethereum (EVM), así como realizar las distintas pruebas en un entorno de desarrollo integrado amigable para el desarrollador.
+
+## Mocha
+In this chapter, I’ll present Mocha, a JavaScript unit testing framework that will allow you to easily automate unit tests for your contracts. In the next chapter, you’ll learn how to set up Truffle, through which you’ll automate build and deployment of your Dapps. Finally, you’ll also incorporate Mocha tests within Truffle, making it your fully integrated development environment.
+
+### Build Artifacts
+
+Every time you compile a smart contract, the Solidity compiler generates a JSON file (referred to as build artifacts) which contains the binary representation of that contract and saves it in the build/contracts folder.
+
+Next, when you run a migration, Truffle updates this file with the information related to that network.
+
+The first thing you'll need to do every time you start writing a new test suite is to load the build artifacts of the contract you want to interact with. This way, Truffle will know how to format our function calls in a way the contract will understand.
+
+***Ejemplo***
+
+>const MyAwesomeContract = artifacts.require(“MyAwesomeContract”);
+
+The function returns something called a contract abstraction. In a nutshell, a contract abstraction hides the complexity of interacting with Ethereum and provides a convenient JavaScript interface to our Solidity smart contract
