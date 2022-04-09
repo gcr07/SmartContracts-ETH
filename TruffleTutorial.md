@@ -24,15 +24,22 @@ truffle version
 >So, running the truffle init command inside of the CryptoZombies directory, should create several directories and some 
 JavaScript and Solidity files. Let's have a closer look:
 
+>Note: truffle init should automatically create a contract called Migrations.sol and the corresponding migration file. We'll explain them a bit later.
+
 ***contratos:***
 >Este es el lugar donde Truffle espera encontrar todos nuestros contratos inteligentes. 
 Para mantener el código organizado, incluso podemos crear carpetas anidadas como contratos/tokens. Con buena pinta
 
+***migrations:***
+>A migration is a JavaScript file that tells Truffle how to deploy a smart contract.
+
+***test:***
+>Aquí se espera que pongamos las pruebas unitarias que serán archivos JavaScript o Solidity. Recuerde, una vez que se implementa un contrato, no se puede cambiar, por lo que es esencial que probemos nuestros contratos inteligentes antes de implementarlos.
 
 
+***truffle.js and truffle-config.js:***
 
-
-
+>Config files used to store the network settings for deployment. Truffle needs two config files because on Windows having both truffle.js and truffle.exe in the same folder might generate conflicts. Long story short - if you are running Windows, it is advised to delete truffle.js and use truffle-config.js as the default config file. Check out Truffle's official documentation to further your understanding.
 
 
 
