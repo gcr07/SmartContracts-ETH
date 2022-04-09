@@ -794,7 +794,9 @@ Additionally, if there are variables that we are not going to use, it's often be
  (,int price,,,) = priceFeed.latestRoundData();
  ```
  
+## Self-destruct
 
+The only possibility that code is removed from the blockchain is when a contract at that address performs the selfdestruct operation. The remaining Ether stored at that address is sent to a designated target and then the storage and code is removed from the state.
 
 
 ## Calling Payable Functions
@@ -859,6 +861,14 @@ Truffle es un conjunto de herramientas de programación orientado a smart contra
 
 ## Mocha
 In this chapter, I’ll present Mocha, a JavaScript unit testing framework that will allow you to easily automate unit tests for your contracts. In the next chapter, you’ll learn how to set up Truffle, through which you’ll automate build and deployment of your Dapps. Finally, you’ll also incorporate Mocha tests within Truffle, making it your fully integrated development environment.
+
+##  Ganache
+
+You can do so by using a tool called Ganache, which sets up a local Ethereum network.
+
+Every time Ganache starts, it creates 10 test accounts and gives them 100 Ethers to make testing easier. Since Ganache and Truffle are tightly integrated we can access these accounts through the accounts array we've mentioned in the previous chapter.
+
+But using accounts[0] and accounts[1] would not make our tests read well, right?
 
 ### Build Artifacts
 
