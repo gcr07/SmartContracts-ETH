@@ -2,6 +2,22 @@
 
 Este repositorio son las notas de lo que voy aprendiendo si ves algo mal levanta un issue y lo compongo.
 
+## Ethereum mempool
+
+mempool (el conjunto de transacciones pendientes y no confirmadas)
+
+## MEV
+
+Podríamos simplificar MEV como la técnica utilizada para reordenar transacciones y beneficiarse de la confirmación de estas, antes o después de otras transacciones. Por ejemplo, un usuario puede pagar una tarifa de gas extremadamente alta para que se confirme su compra de ETH antes de que el precio suba, y luego venderlo con ganancia.
+
+Quienes hacen arbitraje están dispuestos a pagar precios altísimos para que sus transacciones sean priorizadas. Como consecuencia, se crea una guerra de oferta, generalmente negativa para todos.
+
+
+MEV son las siglas de valor máximo extraíble, que se refiere al máximo valor que se puede obtener de un bloque, por encima de la recompensa estándar del mismo y las tarifas de gas. Esto se logra al incluir, excluir o modificar el orden de las transacciones de un bloque, priorizando las mejores ofertas.
+
+La opinión respecto a esta práctica es en su mayoría negativa. Algunos investigadores señalan que se trata de un problema grave. Mientras, el otro lado de la balanza piensa que sus efectos son moderados y solucionables.
+
+
 <h2> ETH dos tipos de direcciones existen </h2>
 <p> There are two kinds of accounts in Ethereum which share the same address space: External accounts that are controlled by public-private key pairs (i.e. humans) and contract accounts which are controlled by the code stored together with the account.
 </p> 
