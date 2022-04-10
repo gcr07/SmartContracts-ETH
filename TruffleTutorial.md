@@ -42,7 +42,13 @@ Para mantener el código organizado, incluso podemos crear carpetas anidadas com
 >Config files used to store the network settings for deployment. Truffle needs two config files because on Windows having both truffle.js and truffle.exe in the same folder might generate conflicts. Long story short - if you are running Windows, it is advised to delete truffle.js and use truffle-config.js as the default config file. Check out Truffle's official documentation to further your understanding.
 
 
+***truffle-hdwallet-provider***
 
+El proveedor Truffle HDWallet es una conexión de red conveniente y fácil de configurar a ethereum a través de infura.io (o cualquier otro proveedor compatible).
+
+Por ejemplo, el proveedor de HDWallet agrega algunas funciones requeridas por Truffle que no están disponibles con infura, como el filtrado de eventos y la firma de transacciones.
+
+Puede usar este proveedor donde sea que se necesite un proveedor Web3, no solo en Truffle. Para el uso específico de trufas, consulte la siguiente sección
 
 
 
