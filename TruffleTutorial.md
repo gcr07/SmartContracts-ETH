@@ -45,6 +45,17 @@ Para mantener el código organizado, incluso podemos crear carpetas anidadas com
 
 >Config files used to store the network settings for deployment. Truffle needs two config files because on Windows having both truffle.js and truffle.exe in the same folder might generate conflicts. Long story short - if you are running Windows, it is advised to delete truffle.js and use truffle-config.js as the default config file. Check out Truffle's official documentation to further your understanding.
 
+Aqui se activa la red de development ganache
+
+```
+     development: {
+      host: "127.0.0.1",     // Localhost (default: none)
+      port: 8545,            // Standard Ethereum port (default: none)
+      network_id: "*",       // Any network (default: none)
+     },
+     
+```
+
 
 ***truffle-hdwallet-provider***
 
@@ -55,14 +66,34 @@ Por ejemplo, el proveedor de HDWallet agrega algunas funciones requeridas por Tr
 Puede usar este proveedor donde sea que se necesite un proveedor Web3, no solo en Truffle. Para el uso específico de trufas, consulte la siguiente sección
 
 
+```
+npm install truffle-hdwallet-provider
+```
 
+## 1 Configuration Files
 
+Aqui decide que red utilizar ya sea una testnet o ganache.
 
+## 2 Migrations
 
+Normally at this point, before deploying to Ethereum, you would want to test your smart contract locally. You can do this using a tool called Ganache, which sets up a local Ethereum network.
 
+***To deploy to Ethereum we will have to create something called a migration.***
 
+Las migraciones son archivos JavaScript que ayudan a Truffle a implementar el código en Ethereum. Tenga en cuenta que truffle init creó un contrato especial llamado Migrations.sol que realiza un seguimiento de los cambios que está realizando en su código. La forma en que funciona es que el historial de cambios se guarda en la cadena. Por lo tanto, no hay forma de que implemente el mismo código dos veces.
 
+NOTA: Se tiene que crear un archivo de migration para cada contrato en orden 1_nombre 2_nombre 3_nombre como se muestra arriba.
 
+## 3 Compile
+
+```
+truffle compile
+
+``` 
+
+Compila los contratos que esten el la carpeta de "contracts" ademas genera los llamados "artefactos" en la capeta built/contracts genera un archivo por cada contrato.
+
+>Note: The build ***artifacts*** are comprised of the "bytecode" versions of the smart contracts, ABIs, and some internal data Truffle is using to correctly deploy the code. Avoid editing these files, or Truffle might stop working correctly.
 
 
 
