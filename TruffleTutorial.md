@@ -74,17 +74,7 @@ npm install truffle-hdwallet-provider
 
 Aqui decide que red utilizar ya sea una testnet o ganache.
 
-## 2 Migrations
-
-Normally at this point, before deploying to Ethereum, you would want to test your smart contract locally. You can do this using a tool called Ganache, which sets up a local Ethereum network.
-
-***To deploy to Ethereum we will have to create something called a migration.***
-
-Las migraciones son archivos JavaScript que ayudan a Truffle a implementar el código en Ethereum. Tenga en cuenta que truffle init creó un contrato especial llamado Migrations.sol que realiza un seguimiento de los cambios que está realizando en su código. La forma en que funciona es que el historial de cambios se guarda en la cadena. Por lo tanto, no hay forma de que implemente el mismo código dos veces.
-
-NOTA: Se tiene que crear un archivo de migration para cada contrato en orden 1_nombre 2_nombre 3_nombre como se muestra arriba.
-
-## 3 Compile
+## 2 Compile
 
 ```
 truffle compile
@@ -97,6 +87,27 @@ Compila los contratos que esten el la carpeta de "contracts" ademas genera los l
 
 
 
+## 3 Migrations
+
+Normally at this point, before deploying to Ethereum, you would want to test your smart contract locally. You can do this using a tool called Ganache, which sets up a local Ethereum network.
+
+***To deploy to Ethereum we will have to create something called a migration.***
+
+Las migraciones son archivos JavaScript que ayudan a Truffle a implementar el código en Ethereum. Tenga en cuenta que truffle init creó un contrato especial llamado Migrations.sol que realiza un seguimiento de los cambios que está realizando en su código. La forma en que funciona es que el historial de cambios se guarda en la cadena. Por lo tanto, no hay forma de que implemente el mismo código dos veces.
+
+NOTA: Se tiene que crear un archivo de migration para cada contrato en orden 1_nombre 2_nombre 3_nombre como se muestra arriba.
+
+
+
+## Paso final 
+
+Para hacer el deploy en cualquier testnet.
+
+```
+truffle migrate --network rinkeby
+```
+
+Note: truffle deploy is just an alias for truffle migrate. However, since our command-line interpreter is pretty basic, it won't consider the answer correct unless you're using migrate.
 
 
 
