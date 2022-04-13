@@ -883,3 +883,31 @@ The first thing you'll need to do every time you start writing a new test suite 
 >const MyAwesomeContract = artifacts.require(“MyAwesomeContract”);
 
 The function returns something called a contract abstraction. In a nutshell, a contract abstraction hides the complexity of interacting with Ethereum and provides a convenient JavaScript interface to our Solidity smart contract
+
+# Call contract functions
+
+Para llamar a las funciones de un contrato se tiene que instanciasr ejemplo
+
+```
+async function getOracleContract (web3js) {
+  const networkId = await web3js.eth.net.getId()
+  return new web3js.eth.Contract(OracleJSON.abi, OracleJSON.networks[networkId].address)
+}
+```
+
+>Sweet, you've instantiated your contract🙌🏻! Now you can call its functions
+
+
+## Capturar eventos
+
+Para capturar eventos se hace asi 
+
+```
+myContract.events.EventName(async (err, event) => {
+  if (err) {
+    console.error('Error on event', err)
+    return
+  }
+  // Do something
+})
+```
