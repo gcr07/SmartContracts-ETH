@@ -911,3 +911,14 @@ myContract.events.EventName(async (err, event) => {
   // Do something
 })
 ```
+## zkSync
+
+una solución de escalado de capa 2 sin aplicaciones específicas y sin confianza para las transacciones de Ethereum. Es un remedio para el creciente problema de las transacciones poco fiables y costosas en la cadena de bloques Ethereum debido a las altísimas tarifas de gas
+
+Both Ethereum and zkSync “speak” a language called JSON-RPC that is not human-readable. Luckily, they provide libraries that hide all the complexity below the surface, so you only need to know a bit of JavaScript.
+
+### The Ethers Project (ethers)
+
+A complete Ethereum wallet implementation and utilities in JavaScript (and TypeScript).
+
+### JavaScript SDK for zkSync (zksync)
