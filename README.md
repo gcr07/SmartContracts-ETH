@@ -921,4 +921,14 @@ Both Ethereum and zkSync “speak” a language called JSON-RPC that is not huma
 
 A complete Ethereum wallet implementation and utilities in JavaScript (and TypeScript).
 
+>npm i ethers
+
 ### JavaScript SDK for zkSync (zksync)
+
+zkSync is a scaling and privacy engine for Ethereum. Its current functionality scope includes low gas transfers of ETH and ERC20 tokens in the Ethereum network.
+
+This document is a description of the JS library that can be used to interact with zkSync.
+
+>npm i zksync
+
+zkSync makes use of something called ***zk-SNARKs*** which stands for... "Zero-knowledge succinct non-interactive arguments of knowledge".
