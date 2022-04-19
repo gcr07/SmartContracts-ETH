@@ -917,6 +917,8 @@ una solución de escalado de capa 2 sin aplicaciones específicas y sin confianz
 
 Both Ethereum and zkSync “speak” a language called JSON-RPC that is not human-readable. Luckily, they provide libraries that hide all the complexity below the surface, so you only need to know a bit of JavaScript.
 
+> You  have to create a provider that allows your application to communicate with zkSync. 
+
 ### The Ethers Project (ethers)
 
 A complete Ethereum wallet implementation and utilities in JavaScript (and TypeScript).
@@ -932,3 +934,13 @@ This document is a description of the JS library that can be used to interact wi
 >npm i zksync
 
 zkSync makes use of something called ***zk-SNARKs*** which stands for... "Zero-knowledge succinct non-interactive arguments of knowledge".
+
+## Instantiate a zkSync wallet 
+
+Cada billetera zkSync tiene una dirección Ethereum asociada, y el usuario que posee una cuenta Ethereum posee la cuenta zkSync correspondiente
+
+>The zksync.Wallet wallet class wraps ethers.Signer and zksync.Signer, allowing you to use it for transferring assets between chains (which requires you to sign transactions on Ethereum) and also for transferring assets between zkSync accounts (which requires you to sign transactions on zkSync). Sweet!
+
+
+
+
