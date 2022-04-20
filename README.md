@@ -942,5 +942,12 @@ Cada billetera zkSync tiene una dirección Ethereum asociada, y el usuario que p
 >The zksync.Wallet wallet class wraps ethers.Signer and zksync.Signer, allowing you to use it for transferring assets between chains (which requires you to sign transactions on Ethereum) and also for transferring assets between zkSync accounts (which requires you to sign transactions on zkSync). Sweet!
 
 
+# Deploy
 
+Cuando se va desplegar un contrato y se maneja herencia se tiene que deplegar el contrato hijo ya que al hacer import ya se copia en el codigo aunque
+no nos demos cuenta checa la explicacion de import abajo
+
+## import "./contrato.sol
+
+Lo que hace esta linea literalmente es copiar y pegar el contrato arriba del otro por eso es que cuanod usamos "is" no hay problema.
 
