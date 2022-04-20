@@ -951,3 +951,6 @@ no nos demos cuenta checa la explicacion de import abajo
 
 Lo que hace esta linea literalmente es copiar y pegar el contrato arriba del otro por eso es que cuanod usamos "is" no hay problema.
 
+## Creating a contract factory to clone Solidity smart contracts
+
+>https://blog.logrocket.com/creating-contract-factory-clone-solidity-smart-contracts/
