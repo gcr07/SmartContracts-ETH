@@ -954,3 +954,8 @@ Lo que hace esta linea literalmente es copiar y pegar el contrato arriba del otr
 ## Creating a contract factory to clone Solidity smart contracts
 
 >https://blog.logrocket.com/creating-contract-factory-clone-solidity-smart-contracts/
+
+## Interface vs Deploy a contract from other contract
+
+Para desplegar un contrato desde otro se tiene que tener toda su funcionalidad importada. Para usar un contrato desde otro contrato se tiene que 
+tener su interfaz.
