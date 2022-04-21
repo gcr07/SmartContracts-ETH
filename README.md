@@ -953,7 +953,7 @@ no nos demos cuenta checa la explicacion de import abajo
 
 Lo que hace esta linea literalmente es copiar y pegar el contrato arriba del otro por eso es que cuanod usamos "is" no hay problema.
 
-## import "@openzeppelin/contracts/token/ERC20/IERC20.sol" WHAT the @ Does?
+## import "@openzeppelin/contracts/token/ERC20/IERC20.sol" WHAT the @ Does? OJO IMPORTA las Interfaces para poder usarlos!
 
 FUENTE: https://stackoverflow.com/questions/71532782/what-are-the-rules-syntax-for-importing-from-github-repo-to-solidity-contract
 
