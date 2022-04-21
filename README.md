@@ -952,6 +952,7 @@ no nos demos cuenta checa la explicacion de import abajo
 ## import "./contrato.sol
 
 Lo que hace esta linea literalmente es copiar y pegar el contrato arriba del otro por eso es que cuanod usamos "is" no hay problema.
+***Las interfaces compilan hasta un abi ABI*** 
 
 ## import "@openzeppelin/contracts/token/ERC20/IERC20.sol" WHAT the @ Does? OJO IMPORTA las Interfaces para poder usarlos!
 
