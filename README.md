@@ -947,9 +947,27 @@ Cada billetera zkSync tiene una dirección Ethereum asociada, y el usuario que p
 Cuando se va desplegar un contrato y se maneja herencia se tiene que deplegar el contrato hijo ya que al hacer import ya se copia en el codigo aunque
 no nos demos cuenta checa la explicacion de import abajo
 
+# Import all
+
 ## import "./contrato.sol
 
 Lo que hace esta linea literalmente es copiar y pegar el contrato arriba del otro por eso es que cuanod usamos "is" no hay problema.
+
+## import "@openzeppelin/contracts/token/ERC20/IERC20.sol" WHAT the @ Does?
+
+Your snippet shows a direct import that searches for the file in your local directories based on the compiler config.
+
+One of the default sources is the node_modules directory where NPM packages are installed.
+
+The @ symbol is just a prefix of NPM scoped packages, allowing to group more packages into the same namespace (in this case @openzeppelin/<package_name>).
+
+To import a contract from GitHub, you can just pass its full URL:
+
+>import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol";
+
+gain because of the default config, the compiler downloads the remote file from GitHub to a local temp directory, and imports its contents before compiling.
+
+# Deploy and interact with other contracts
 
 ## Creating a contract factory to clone Solidity smart contracts
 
