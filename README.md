@@ -955,6 +955,8 @@ Lo que hace esta linea literalmente es copiar y pegar el contrato arriba del otr
 
 ## import "@openzeppelin/contracts/token/ERC20/IERC20.sol" WHAT the @ Does?
 
+FUENTE: https://stackoverflow.com/questions/71532782/what-are-the-rules-syntax-for-importing-from-github-repo-to-solidity-contract
+
 Your snippet shows a direct import that searches for the file in your local directories based on the compiler config.
 
 One of the default sources is the node_modules directory where NPM packages are installed.
