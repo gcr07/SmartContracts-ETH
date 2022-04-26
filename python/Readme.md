@@ -45,6 +45,18 @@ Cualquier paquete que instalas usando pip está ahora ubicado en la carpeta de p
 >deactivate
 
 
+# Ganache
+
+Para usar la vercion con GUI ya sabes escucha en el puerto 7585 etc
+
+## Para modo consola
+
+>npm install -g ganache-cli
+
+Para generar siempre las mismas llaves
+
+>ganache-cli -d
+
 
 
 
