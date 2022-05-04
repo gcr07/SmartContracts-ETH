@@ -91,3 +91,13 @@ Tipos de Visibilidad:
 Entre "public"y"external" en muchos casos es preferible usar "external", si la
 lógica de negocio lo permite. Ya que éste modificador de visibilidad consume
 menos gas.
+
+Variables 
+
+Por defecto tienen scope internal osea se pueden usar solo adentro del contrato y de uno derivado
+
+Funciones 
+
+Por defecto tienen scope de public
+
+
