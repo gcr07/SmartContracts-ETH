@@ -74,3 +74,20 @@ EXTERNAL
 external is similar to public, except that these functions can ONLY be called outside the contract — they can't be called by other functions inside that contract.
 We'll talk about why you might want to use external vs public later.
 
+----------------UNA explliacacion mas----------------------
+
+
+Tipos de Visibilidad:
+ •Public: Totalmente accesible, sea cual sea el origen.
+ ·External: Accesible desde una cuenta de propiedad externayatravés de
+  un mensaje (llamada desde otro contrato). No es accesible desde una
+ función del mismo contratoouno derivado del mismo.
+ •Internal: Accesible únicamenteatravés de otra función incluida en el
+  mismo contrato,odesde una función de un contrato que deriva del
+  mismo. NO es accesible desde un mensaje de un contrato externoouna
+  transacción externa.
+  Private: Accesible únicamenteatravés de una función incluida en el
+  mismo contrato.
+Entre "public"y"external" en muchos casos es preferible usar "external", si la
+lógica de negocio lo permite. Ya que éste modificador de visibilidad consume
+menos gas.
