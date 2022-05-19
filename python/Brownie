@@ -2,3 +2,18 @@
 
 Es como truffle pero para python y ayuda a evitar escribir todo de 0
 
+## Crear un proyecto
+
+> brownie init
+
+## Carpetas
+
+Poner el contrato en la carpeta de la rama principal contracts no en build/contracts.
+
+## Compilar codigo
+
+< brownie compile
+
+## Carpeta scritps
+
+Aqui es donde se ejecuta el main
