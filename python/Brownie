@@ -34,3 +34,7 @@ You can modify Brownie’s default behaviours by creating an optional configurat
 The configuration file must be saved as brownie-config.yaml. If saved in the root directory of a project it will be loaded whenever that project is active. 
 If saved in your home path, it will always be loaded.
 
+## Poner un proveedor a la red Kovan
+
+brownie networks modify kovan host=https://speedy-nodes-nyc.moralis.io/0ec78c5cd99adsafasfdae098ed6f9a07b/eth/kovan
+
