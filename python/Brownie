@@ -27,8 +27,10 @@ Aqui es donde se ejecuta el main
 
 >brownie accounts list
 
-The Configuration File
+## The Configuration File
+
 You can modify Brownie’s default behaviours by creating an optional configuration file.
 
-The configuration file must be saved as brownie-config.yaml. If saved in the root directory of a project it will be loaded whenever that project is active. If saved in your home path, it will always be loaded.
+The configuration file must be saved as brownie-config.yaml. If saved in the root directory of a project it will be loaded whenever that project is active. 
+If saved in your home path, it will always be loaded.
 
