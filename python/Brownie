@@ -17,3 +17,18 @@ Poner el contrato en la carpeta de la rama principal contracts no en build/contr
 ## Carpeta scritps
 
 Aqui es donde se ejecuta el main
+
+## Crear una cuenta 
+
+> brownie accounts new freecodecamp
+
+## Lista de cuentas 
+
+
+>brownie accounts list
+
+The Configuration File
+You can modify Brownie’s default behaviours by creating an optional configuration file.
+
+The configuration file must be saved as brownie-config.yaml. If saved in the root directory of a project it will be loaded whenever that project is active. If saved in your home path, it will always be loaded.
+
