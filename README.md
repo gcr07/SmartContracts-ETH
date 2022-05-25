@@ -980,3 +980,30 @@ gain because of the default config, the compiler downloads the remote file from 
 
 Para desplegar un contrato desde otro se tiene que tener toda su funcionalidad importada. Para usar un contrato desde otro contrato se tiene que 
 tener su interfaz.
+
+# Transaccion VS Call
+
+## Call
+A call is a local invocation of a contract function that does not broadcast or publish anything on the blockchain.
+
+It is a read-only operation and will not consume any Ether. It simulates what would happen in a transaction, but discards all the state changes when it is done.
+
+It is synchronous and the return value of the contract function is returned immediately.
+
+Its web3.js API is web3.eth.call and is what's used for Solidity view, pure, constant functions.
+
+Its underlying JSON-RPC is eth_call
+
+## Transaction
+A transaction is broadcasted to the network, processed by miners, and if valid, is published on the blockchain.
+
+It is a write-operation that will affect other accounts, update the state of the blockchain, and consume Ether (unless a miner accepts it with a gas price of zero).
+
+It is asynchronous, because it is possible that no miners will include the transaction in a block (for example, the gas price for the transaction may be too low). Since it is asynchronous, the immediate return value of a transaction is always the transaction's hash. To get the "return value" of a transaction to a function, Events need to be used (unless it's Case4 discussed below). For ethers.js an example: listening to contract events using ethers.js?
+
+Its web3.js API is web3.eth.sendTransaction and is used if a Solidity function is not marked constant.
+
+Its underlying JSON-RPC is eth_sendTransaction
+
+sendTransaction will be used when a verb is needed, since it is clearer than simply transaction.
+
