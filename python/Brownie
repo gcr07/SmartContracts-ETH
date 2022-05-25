@@ -38,3 +38,24 @@ If saved in your home path, it will always be loaded.
 
 brownie networks modify kovan host=https://speedy-nodes-nyc.moralis.io/0ec78c5cd99adsafasfdae098ed6f9a07b/eth/kovan
 
+### Iniciar un proyecto 
+
+scritps/deploy.py
+
+Es en este archivo donde se hace el deploy por codigo asi como basicamente todo transacciones retornos de valor se puede usar con la consola.
+
+``` 
+from brownie import *
+
+
+def main():
+    print("Hoello")
+
+```
+
+## brownie-config.yaml
+
+Archivo de configuracion de brownie te dice como hacer basicamente todo.
+
+dotenv:.env esto van dentro del archivo de configuracion y le dice a brownie que agarre variables de entorno del .env al momento de correr scritps
+
