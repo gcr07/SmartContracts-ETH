@@ -105,6 +105,7 @@ def main():
   Seran scritps en python de igual manera. Tiene que empesar por la palabra test eso si!
   
   ```
+  #test_simple_storage
   from brownie import SimpleStorage, accounts
 
 
@@ -119,5 +120,8 @@ def test_deploy():
     assert starting_value == expected
     
     ```
+  Los test no tienen que ver con el scripts/deploy ya que aqui se esta trabajando unicamente con el.
+  Si solo deseas probar una funcion de test entonces usa
   
+  brownie test -k test_name.py
   
