@@ -59,3 +59,43 @@ Archivo de configuracion de brownie te dice como hacer basicamente todo.
 
 dotenv:.env esto van dentro del archivo de configuracion y le dice a brownie que agarre variables de entorno del .env al momento de correr scritps
 
+## Deploy a contract
+
+```
+from brownie import *
+
+
+def main():
+
+    # print(accounts[0])
+    account = accounts.add(config["wallets"]["from_key"])
+    print(account)
+    SimpleStorage.deploy({"from": account})
+    ```
+    
+Primero se importa en el script despues se usa la funcion deploy
+
+### Opcion 1
+
+from brownie import *
+
+Con esta opcion estas diciendole que importas todo osea que ya esta importado SimpleStorage y ya solo usar deploy
+
+### Opcion 2
+
+Importar cada cosa que vayas usando aqui tienes mas control ve ejemplo de abajo.
+
+
+
+
+```
+from brownie import accounts, config, SimpleStorage
+
+
+def main():
+
+    # print(accounts[0])
+    account = accounts.add(config["wallets"]["from_key"])
+    print(account)
+    SimpleStorage.deploy({"from": account})
+    ```
