@@ -123,5 +123,5 @@ def test_deploy():
   Los test no tienen que ver con el scripts/deploy ya que aqui se esta trabajando unicamente con el.
   Si solo deseas probar una funcion de test entonces usa
   
-  brownie test -k test_name.py
+  brownie test -k test_name
   
