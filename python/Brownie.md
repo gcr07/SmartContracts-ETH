@@ -64,27 +64,25 @@ dotenv:.env esto van dentro del archivo de configuracion y le dice a brownie que
 ```
 from brownie import *
 
-
 def main():
 
     # print(accounts[0])
     account = accounts.add(config["wallets"]["from_key"])
     print(account)
     SimpleStorage.deploy({"from": account})
-    ```
+```
     
 Primero se importa en el script despues se usa la funcion deploy
 
 ### Opcion 1
 
-from brownie import *
+> from brownie import *
 
 Con esta opcion estas diciendole que importas todo osea que ya esta importado SimpleStorage y ya solo usar deploy
 
 ### Opcion 2
 
 Importar cada cosa que vayas usando aqui tienes mas control ve ejemplo de abajo.
-
 
 
 
@@ -98,7 +96,7 @@ def main():
     account = accounts.add(config["wallets"]["from_key"])
     print(account)
     SimpleStorage.deploy({"from": account})
-    ```
+```
     
   ## Test 
   
