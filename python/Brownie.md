@@ -125,3 +125,7 @@ def test_deploy():
   
   brownie test -k test_name
   
+  brownie test --pdb
+  
+  Es como un break point se para en onde hya errores y genera una shell para que debugges valores.
+  
