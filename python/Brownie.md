@@ -128,8 +128,49 @@ Metes tu clave privada y en el codigo:
  >brownie run scripts/deploy.py --network kovan
  >brownie run scripts/deploy.py --network rinkeby
 
+```
+rom brownie import *
 
+# from brownie import accounts, config, SimpleStorage
+
+
+def deploy_simple_storage():
+
+    # print(accounts[0])
+    # account = accounts.add(config["wallets"]["from_key"])
+    account = get_account()
+    # print(account)
+    simple_storage = SimpleStorage.deploy({"from": account})
+    print("IMRPIMIENDO")
+    # print(simple_storage)
+    stored_value = simple_storage.retrieve()
+    print("1 Retrevie")
+    print(stored_value)
+    transaction = simple_storage.store(25, {"from": account})
+    transaction.wait(1)
+    # print(account.balance())
+    updated_stored_value = simple_storage.retrieve()
+    print("2 Retrevie")
+    print(updated_stored_value)
+    print("NUEVO Transaccion2:")
+    transaction2 = simple_storage.store(1500, {"from": account})
+    transaction2.wait(1)
+    updated_stored_value2 = simple_storage.retrieve()
+    print(updated_stored_value2)
+
+
+def get_account():
+    if network.show_active() == "development":
+        return accounts[0]
+    else:
+        return accounts.load("1")
+
+
+def main():
+    print("Dentro del main")
+    deploy_simple_storage()
    
+```
   ## Test 
   
   Seran scritps en python de igual manera. Tiene que empesar por la palabra test eso si!
