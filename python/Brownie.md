@@ -112,7 +112,6 @@ Esperas un bloque que se confirme o mine y ya pides datos.
 
 ## Agregar una cuenta
 
->brownie accounts new 1
 
 Para conectarte a una testnet necesitas una addrees con ether de esa red y posteriormente agregarla a brownie
 
@@ -125,7 +124,9 @@ Metes tu clave privada y en el codigo:
 ## Desplegar en testnet
 
  >brownie run scripts/deploy.py --network ropsten
+ 
  >brownie run scripts/deploy.py --network kovan
+ 
  >brownie run scripts/deploy.py --network rinkeby
 
 ```
