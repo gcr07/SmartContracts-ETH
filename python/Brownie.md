@@ -96,8 +96,20 @@ def main():
     account = accounts.add(config["wallets"]["from_key"])
     print(account)
     SimpleStorage.deploy({"from": account})
+   
 ```
-    
+   
+# Main Networks
+
+> brownie networks list
+
+Todas las redes que tengan develoment son temporales y se borran cuando se termina de ejecutar el contrato. Para trabajar en redes testnet o las main usa un provedor como infura o molaris. Pero primero tienes que agregar una cuenta ya que esta es la que tiene el ETH de esas redes.
+
+## Agregar una cuenta
+
+>brownie accounts new 1
+
+   
   ## Test 
   
   Seran scritps en python de igual manera. Tiene que empesar por la palabra test eso si!
