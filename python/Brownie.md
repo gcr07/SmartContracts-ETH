@@ -103,11 +103,31 @@ def main():
 
 > brownie networks list
 
-Todas las redes que tengan develoment son temporales y se borran cuando se termina de ejecutar el contrato. Para trabajar en redes testnet o las main usa un provedor como infura o molaris. Pero primero tienes que agregar una cuenta ya que esta es la que tiene el ETH de esas redes.
+Todas las redes que tengan develoment son temporales y se borran cuando se termina de ejecutar el contrato. Para trabajar en redes testnet o las main usa un provedor como infura o molaris. Pero primero tienes que agregar una cuenta ya que esta es la que tiene el ETH de esas redes. Algo que note es que cada que haces una transaccion tienes que esperar a que se complete de otro modo da error.
+
+> transaction.wait(1)
+
+Esperas un bloque que se confirme o mine y ya pides datos.
+
 
 ## Agregar una cuenta
 
 >brownie accounts new 1
+
+Para conectarte a una testnet necesitas una addrees con ether de esa red y posteriormente agregarla a brownie
+
+>brownie accounts new 1
+ 
+Metes tu clave privada y en el codigo:
+
+> return accounts.load("1")
+
+## Desplegar en testnet
+
+ >brownie run scripts/deploy.py --network ropsten
+ >brownie run scripts/deploy.py --network kovan
+ >brownie run scripts/deploy.py --network rinkeby
+
 
    
   ## Test 
