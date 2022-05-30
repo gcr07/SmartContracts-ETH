@@ -129,11 +129,10 @@ Metes tu clave privada y en el codigo:
  
  >brownie run scripts/deploy.py --network rinkeby
 
-```
-rom brownie import *
+```python
+from brownie import *
 
 # from brownie import accounts, config, SimpleStorage
-
 
 def deploy_simple_storage():
 
@@ -176,10 +175,9 @@ def main():
   
   Seran scritps en python de igual manera. Tiene que empesar por la palabra test eso si!
   
-  ```
+  ```python
   #test_simple_storage
   from brownie import SimpleStorage, accounts
-
 
 def test_deploy():
     # Arrange
@@ -190,18 +188,21 @@ def test_deploy():
     expected = 0
     # Assert
     assert starting_value == expected
-    
+ 
     ```
+    
   Los test no tienen que ver con el scripts/deploy ya que aqui se esta trabajando unicamente con el.
   Si solo deseas probar una funcion de test entonces usa
   
-  brownie test -k test_name
+  >brownie test -k test_name
   
-  brownie test --pdb
+  >brownie test --pdb
   
-  brownie test -s
+  >brownie test -s
   
   Es como un break point se para en onde hya errores y genera una shell para que debugges valores.
+  
+  
   
 # Interactuar con contratos deployed
   
@@ -229,8 +230,7 @@ que se pudiera correr en un script
 Simplemente es donde veas por ejemplo @chainlink significa esto(ver codifo del archivo de configuracion).
 
 
-```
-
+```python
 dependencies:
 # - <organization/repo>@<version>
 
@@ -240,7 +240,6 @@ compiler:
   solc:
     remappings:
      -'@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
-
 
 ```
   
