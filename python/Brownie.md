@@ -203,3 +203,46 @@ def test_deploy():
   
   Es como un break point se para en onde hya errores y genera una shell para que debugges valores.
   
+# Interactuar con contratos deployed
+  
+Se creo un nuevo script en la carpeta scripts este importo a SimpleStorage y despues al parecer brownie guarda la direccion y todos los datos de 
+donde  se desplego el contrato osea se vuelve como un objeto este objeto tiene propiedades la [0] guarda la ***Direccion donde se desplego el contrato*** segun la red donde se desplegara.
+
+## [0] First Deployment
+
+El primero que se deploy
+
+## [-1] El mas reciente 
+
+Usa la direccion del contrato mas reciente
+
+## Consola
+
+Para traabajar con la consola  usa. Es como una consola de python pero tienes todas las funciones de brownie y has e cuenta que corres cualquer instruccion 
+que se pudiera correr en un script
+
+> brownie console
+
+
+# REMAPPINGS
+
+Simplemente es donde veas por ejemplo @chainlink significa esto(ver codifo del archivo de configuracion).
+
+
+```
+
+dependencies:
+# - <organization/repo>@<version>
+
+- smartcontractkit/chainlink-brownie-contracts@1.1.1
+
+compiler:
+  solc:
+    remappings:
+     -'@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
+
+
+```
+  
+  
+  
