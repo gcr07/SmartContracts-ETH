@@ -188,8 +188,7 @@ def test_deploy():
     expected = 0
     # Assert
     assert starting_value == expected
- 
-    ```
+```
     
   Los test no tienen que ver con el scripts/deploy ya que aqui se esta trabajando unicamente con el.
   Si solo deseas probar una funcion de test entonces usa
