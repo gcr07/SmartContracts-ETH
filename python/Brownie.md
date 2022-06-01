@@ -226,6 +226,13 @@ que se pudiera correr en un script
 
 # REMAPPINGS
 
+## Brownie puede bajar paquetes(contratos) directamente de github
+
+>mport "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
+
+>import "@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol";
+
+
 Simplemente es donde veas por ejemplo @chainlink significa esto(ver codifo del archivo de configuracion).
 
 
