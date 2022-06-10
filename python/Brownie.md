@@ -263,4 +263,20 @@ Para correr en la fork
 
 >brownie run tests/test_loterry.py --network mainnet-fork
 
+# Brownie PM ( manejador de paquetes)
+
+## Restricciones
+
+The repository must have one or more tagged versions.
+The repository must include a contracts/ folder containing one or more Solidity or Vyper source files.
+
+> https://eth-brownie.readthedocs.io/en/stable/package-manager.html#package-manager
+
+## Comandos 
+
+> [ORGANIZATION]/[REPOSITORY]@[VERSION]
+
+Ejemplo
+
+> brownie pm install OpenZeppelin/openzeppelin-contracts@3.0.0
 
