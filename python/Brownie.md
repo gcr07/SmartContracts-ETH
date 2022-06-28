@@ -12,7 +12,7 @@ Poner el contrato en la carpeta de la rama principal contracts no en build/contr
 
 ## Compilar codigo
 
-< brownie compile
+> brownie compile
 
 ## Carpeta scritps
 
