@@ -1007,3 +1007,9 @@ Its underlying JSON-RPC is eth_sendTransaction
 
 sendTransaction will be used when a verb is needed, since it is clearer than simply transaction.
 
+# IERC20.sol vs ERC20.sol
+
+What is the IERC20.sol contract used for if we have the ERC20.sol contract?
+
+> The IERC20.sol is a interface contract, all in this file are standard as defined in the EIP. As for ERC20.sol, it is an implementation of the IERC20.sol, you can define all your token logic in it. 
+
