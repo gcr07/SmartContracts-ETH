@@ -281,3 +281,20 @@ Ejemplo
 > brownie pm install OpenZeppelin/openzeppelin-contracts@3.0.0
 
 De cualquier forma  necesitas los remmapings 
+
+## Instalar Aave EJEMPLO
+
+Paso 1 entre a el github de Aave
+
+>https://github.com/aave/protocol-v2
+
+Entonces la ruta para instalar seria aave/protocol-v2 
+
+Paso 2 Ver que release va
+
+En este caso vamos a usar la version 1.0.1 entonces la ruta seria aave/protocol-v2@1.0.1 recuerda tienen que tener la carptea contracts el github para
+poder seguir con el estandar finalmente
+
+Paso 3 instalar el paquete
+
+> brownie pm install aave/protocol-v2@1.0.1
