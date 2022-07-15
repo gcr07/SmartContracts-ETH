@@ -65,8 +65,51 @@ export PRIVATE_KEY = 0xasdfalkh543klhtjkdslfgs
 
 ```
 
+### Optimizacion de Metodo 3
 
 
+***Dentro de brawnie-config-yaml***
+
+```
+dotenv: .env
+wallets:
+  from_key:$[PRIVATE_KEY}
+ 
+```
+
+Esto permite que se pueda usar para desplegar asi:
+
+```
+import from brownie accounts, config
+def get_account():
+  account = accounts.add(["wallets"] ["from_key"]
+  
+```
+
+# Deploy a contract 
+
+Para desplegar un contrato se necesita crear un script .py y de ahi importar nuestro contrato de solidity por ejemplo:
+
+```
+from brownie import SimpleStorage
+from brownie import accounts, config
+
+
+def deploy_simple_storage():
+    account = accounts[0]
+    simple_storage = SimpleStorage.deploy({"from": account})
+    print(simple_storage)
+
+
+def main():
+    deploy_simple_storage()
+    print("Hola soy un script")
+
+
+```
+Esta es como la plantilla basica de cualquier proyecto cabe destacar dos cosas importantes para ejecutar una funcion que no haga cambios
+se haria asi ***storage_value=simple_storage.retrive()****. Pero si se va a coambiar algo se generaria una transaccion por lo tanto se
+tiene que decir quien la manda asi:***transaction = simple_storage.store(15, {"from": account})***.
 
 
 
