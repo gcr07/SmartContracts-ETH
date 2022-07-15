@@ -130,6 +130,7 @@ def read_contract():
     print(SimpleStorage[-1])
     simple_storage = SimpleStorage[-1]
     first_deploy = SimpleStorage[0]
+    print(simple_storage.retrieve())
 
 
 
