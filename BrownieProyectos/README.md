@@ -99,6 +99,7 @@ def deploy_simple_storage():
     account = accounts[0]
     simple_storage = SimpleStorage.deploy({"from": account})
     print(simple_storage)
+    transaction.wait(1) # Le dice que espere un bloque para despues continuar haciendo lo que sea
 
 
 def main():
@@ -110,6 +111,7 @@ def main():
 Esta es como la plantilla basica de cualquier proyecto cabe destacar dos cosas importantes para ejecutar una funcion que no haga cambios
 se haria asi ***storage_value=simple_storage.retrive()****. Pero si se va a coambiar algo se generaria una transaccion por lo tanto se
 tiene que decir quien la manda asi:***transaction = simple_storage.store(15, {"from": account})***.
+
 
 
 
