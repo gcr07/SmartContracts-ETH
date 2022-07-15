@@ -2,7 +2,7 @@
 
 # Default
 
-El archivo de configuracion de brownie es: ***brownie-config.yaml***
+El archivo de configuracion de brownie es: ***brownie-config.yaml*** y va a nivel raiz en la carpeta del proyecto junto con archivos como ***.env***.
 
 Por default brownie intenta desplegar el contrato en ganache que trae integrado ( no guarda nada) si no le indicas a que red cuando intentas desplegar un contrato. 
 
