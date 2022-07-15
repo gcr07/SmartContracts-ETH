@@ -162,4 +162,37 @@ def get_account():
 
 ```
 
+# Consola
+
+Para trabajar con la consola se necesita ya tener el proyecto. despues poner el comando.
+
+> brownie console
+
+Este comando abrira la consola (en est ejemplo se trabajo con ganache no se si se pueda en una testnet) y para poder interactuar con el contrato se hace lo siguiente:
+
+```
+>>> SimpleStorage
+[]
+>>> account = accounts[0]
+>>> account
+<Account '0x66aB6D9362d4F35596279692F0251Db635165871'>
+>>> simple_storage = SimpleStorage.deploy({"from": account})
+Transaction sent: 0x3184449bd03fc43c8fbd9e1b814bc52d2c4f67379decf9073c6d01c9ac19ca12
+  Gas price: 0.0 gwei   Gas limit: 12000000   Nonce: 0
+  SimpleStorage.constructor confirmed   Block: 1   Gas used: 333532 (2.78%)
+  SimpleStorage deployed at: 0x3194cBDC3dbcd3E11a07892e7bA5c3394048Cc87
+
+>>> storage_value = simple_storage.retrieve()
+>>> transaction = simple_storage.store(15, {"from": account})
+Transaction sent: 0xbd20897ba62d3fa6ecbafeef2f955917ae6894dd6371d923ad7cd6be5ece0699
+  Gas price: 0.0 gwei   Gas limit: 12000000   Nonce: 1
+  SimpleStorage.store confirmed   Block: 2   Gas used: 41393 (0.34%)
+
+>>> storage_value = simple_storage.retrieve()
+>>> storage_value
+15
+>>>
+
+
+```
 
