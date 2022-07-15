@@ -1016,3 +1016,6 @@ What is the IERC20.sol contract used for if we have the ERC20.sol contract?
 # string vs bytes
 
 String se usa para cadenas donde no se este seguro cuanto mide. Bytes se usa porque es mas barato ademas se sabe a cuanto esta topado osea lo que mide.
+# ^ before version what it means
+
+> pragma solidity ^0.4.21. What does the caret really mean? The short answer is the caret or top hat (^) means the code will be compatible with compiler version from 0.4. 21 to 0.5
