@@ -141,6 +141,8 @@ def main():
 Para acceder al primer contrato desplegado se usa ***first_deploy = SimpleStorage[0]***. Para acceder al ultimo deplegado considerando
 que ya tenemos muchos contratos desplegados ***simple_storage = SimpleStorage[-1]***.
 
+Brownie sabe la **ABI y la Address*** porque se compilo en la carpeta del proyecto.
+
 
 ## SimpleStorage
 
