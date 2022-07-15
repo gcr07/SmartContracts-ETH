@@ -113,6 +113,44 @@ Esta es como la plantilla basica de cualquier proyecto cabe destacar dos cosas i
 se haria asi ***storage_value=simple_storage.retrive()****. Pero si se va a coambiar algo se generaria una transaccion por lo tanto se
 tiene que decir quien la manda asi:***transaction = simple_storage.store(15, {"from": account})***.
 
+# Access Previos Deployments
+
+Cada que se hace un deploy en una red se genera dentro de la carpeta build -> ***deployments*** una carpeta con el numero de la red ***3*** por ser ropsten
+y ahi dentro esta la informacion del contrato que se desplego en formato json esto con el objetivo de no estar deployando el mismo contrato siempre si es que ya se 
+tiene bien desplegado en la red de prueba o en la main.
+
+read_value.py
+
+```
+from brownie import SimpleStorage
+from brownie import accounts, config, network
+
+
+def read_contract():
+    print(SimpleStorage[-1])
+    simple_storage = SimpleStorage[-1]
+    first_deploy = SimpleStorage[0]
+
+
+
+def main():
+    read_contract()
+
+```
+
+Para acceder al primer contrato desplegado se usa ***first_deploy = SimpleStorage[0]***. Para acceder al ultimo deplegado considerando
+que ya tenemos muchos contratos desplegados ***simple_storage = SimpleStorage[-1]***.
+
+
+## SimpleStorage
+
+Brownie maneja los contratos como un array ( los que ha desplegado) entiendo que si no despliega nada no tendria elemenos
+
+read_value.py
+```
+
+```
+
 
 # Network  
 
