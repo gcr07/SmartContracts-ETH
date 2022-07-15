@@ -191,7 +191,8 @@ Transaction sent: 0xbd20897ba62d3fa6ecbafeef2f955917ae6894dd6371d923ad7cd6be5ece
 >>> storage_value = simple_storage.retrieve()
 >>> storage_value
 15
->>>
+>>>len(SimpleStorage
+1
 
 
 ```
