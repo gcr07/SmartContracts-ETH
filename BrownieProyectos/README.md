@@ -145,16 +145,6 @@ que ya tenemos muchos contratos desplegados ***simple_storage = SimpleStorage[-1
 Brownie sabe la **ABI y la Address*** porque se compilo en la carpeta del proyecto.
 
 
-## SimpleStorage
-
-Brownie maneja los contratos como un array ( los que ha desplegado) entiendo que si no despliega nada no tendria elemenos
-
-read_value.py
-```
-
-```
-
-
 # Network  
 
 Para poder interactuar con instrucciones como network.show_active() debemos importar network.
