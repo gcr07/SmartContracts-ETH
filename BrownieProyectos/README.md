@@ -6,7 +6,7 @@ El archivo de configuracion de brownie es: ***brownie-config.yaml*** y va a nive
 
 Por default brownie intenta desplegar el contrato en ganache que trae integrado ( no guarda nada) si no le indicas a que red cuando intentas desplegar un contrato. 
 
-# Accounts existen 3 metodos para trabajar con esto
+# Accounts existen (3 metodos)
 
 >from brownie import accounts
 
