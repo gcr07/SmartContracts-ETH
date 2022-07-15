@@ -82,7 +82,7 @@ Esto permite que se pueda usar para desplegar asi:
 ```
 import from brownie accounts, config
 def get_account():
-  account = accounts.add(["wallets"] ["from_key"]
+  account = accounts.add(["wallets"] ["from_key"])
   
 ```
 
