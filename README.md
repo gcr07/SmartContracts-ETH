@@ -1013,3 +1013,6 @@ What is the IERC20.sol contract used for if we have the ERC20.sol contract?
 
 > The IERC20.sol is a interface contract, all in this file are standard as defined in the EIP. As for ERC20.sol, it is an implementation of the IERC20.sol, you can define all your token logic in it. 
 
+# string vs bytes
+
+String se usa para cadenas donde no se este seguro cuanto mide. Bytes se usa porque es mas barato ademas se sabe a cuanto esta topado osea lo que mide.
