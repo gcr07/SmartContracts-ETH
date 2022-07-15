@@ -82,9 +82,10 @@ Esto permite que se pueda usar para desplegar asi:
 ```
 import from brownie accounts, config
 def get_account():
-  account = accounts.add(["wallets"] ["from_key"])
+  account = accounts.add(config["wallets"] ["from_key"])
   
 ```
+Este metodo permite que NO te pida password al usar la private KEY en redes de pruebas.
 
 # Deploy a contract 
 
@@ -113,6 +114,21 @@ se haria asi ***storage_value=simple_storage.retrive()****. Pero si se va a coam
 tiene que decir quien la manda asi:***transaction = simple_storage.store(15, {"from": account})***.
 
 
+# Network  
 
+Para poder interactuar con instrucciones como network.show_active() debemos importar network.
+
+```
+from brownie import SimpleStorage
+from brownie import accounts, config, network
+
+def get_account():
+    if network.show_active() == "development":
+        return accounts[0]
+    else:
+        return accounts.add(config["wallets"]["from_key"])
+
+
+```
 
 
