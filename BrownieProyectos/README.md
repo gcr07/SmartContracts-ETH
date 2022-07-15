@@ -4,7 +4,7 @@
 
 El archivo de configuracion de brownie es: ***brownie-config.yaml***
 
-Por default brownie intenta desplegar el contrato en ganache que trae integrado ( no guarda nada)
+Por default brownie intenta desplegar el contrato en ganache que trae integrado ( no guarda nada) si no le indicas a que red cuando intentas desplegar un contrato. 
 
 # Accounts existen 3 metodos para trabajar con esto
 
@@ -47,7 +47,25 @@ def get_account():
 
 ## Metodo 3 Accounts en .env ( la menos segura)
 
-Se pone en el archivo ***.env***
+Se pone en el archivo ***.env*** .Para poder usar de esta manera las cuentas tienes que indicarlo en el archivo de confg de brownie de la siguiente manera:
+
+***Dentro de brawnie-config-yaml***
+
+```
+dotenv: .env
+
+```
+Esto le indica a brownie que cuando cargue variables de entorno busque en el archivo ***.env***
+
+***Dentro del .env***
+
+```
+
+export PRIVATE_KEY = 0xasdfalkh543klhtjkdslfgs
+
+```
+
+
 
 
 
