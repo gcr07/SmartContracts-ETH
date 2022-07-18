@@ -24,6 +24,53 @@ export ETHERSCAN_TOKEN = 3V6
 
 ```
 
+# Archivo de configuracion brownie-config.yaml
+
+
+## Fragmento de Fundme
+
+
+```
+    fund_me = FundMe.deploy(
+        price_feed_address,
+        {"from": account},
+        publish_source=config["networks"][network.show_active()].get("verify")
+        
+```     
+El get() permite tomar si se va a verificar el codigo podria pues ser asi:
+
+(hasta donde entiendo)
+
+```
+    fund_me = FundMe.deploy(
+        price_feed_address,
+        {"from": account},
+        publish_source=config["networks"][network.show_active()]["verify"]
+
+```
+
+***brownie-config.yaml***
+
+```
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
+dotenv: .env
+networks:
+  rinkeby:
+    eth_usd_price_feed: '0x8A753747A1Fa494EC906cE90E9f37563A8AF630e'
+    verify: True
+development:
+  verify: False    
+wallets:
+  from_key: ${PRIVATE_KEY}
+
+
+```
+
 # Accounts existen (3 metodos)
 
 >from brownie import accounts
