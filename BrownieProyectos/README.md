@@ -333,3 +333,25 @@ fund_me = FundMe.deploy(
 
 Se ponen en la carpeta contracts -> test(se crea esta) -> MockV3Aggregator.sol. En este caso lo sacaron de "chainlink-mix" github 
 
+# Deploy Persisnten Ganache instance
+
+Para agregar una instancia de ganache persistente 
+
+## Paso 1
+
+Primero ejecutar el ganache
+
+> ./ganache.etc
+
+## Paso 2 
+
+Agregar esa red a brownie
+
+> brownie networks add Ethereum ganache-local host=http://0.0.0.0:7545 chainid=5777
+
+## Paso 3 
+
+Usarla con --network ganache-local
+
+
+
