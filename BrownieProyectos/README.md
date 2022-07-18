@@ -221,6 +221,16 @@ def get_account():
 
 ```
 
+## Fragmento de FundMe
+
+Al momento de elegir la red que queremos usar podemos usar ***network.show_active()*** que muestra la red y tirar del
+archivo de configuracion (brownie-config.yaml)
+
+```
+price_feed_address = config["networks"][network.show_active()]["eth_usd_price_feed"]
+
+```
+
 # Consola
 
 Para trabajar con la consola se necesita ya tener el proyecto. despues poner el comando.
@@ -270,3 +280,9 @@ fund_me = FundMe.deploy(
         {"from": account},
         publish_source=True)
 ```
+
+
+# Mocks
+
+Se ponen en la carpeta contracts -> test(se crea esta) -> MockV3Aggregator.sol. En este caso lo sacaron de "chainlink-mix" github 
+
