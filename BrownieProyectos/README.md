@@ -52,6 +52,7 @@ El get() permite tomar si se va a verificar el codigo podria pues ser asi:
 ***brownie-config.yaml***
 
 ```
+
 dependencies:
   - smartcontractkit/chainlink-brownie-contracts@1.1.1
 compiler:
@@ -63,10 +64,13 @@ networks:
   rinkeby:
     eth_usd_price_feed: '0x8A753747A1Fa494EC906cE90E9f37563A8AF630e'
     verify: True
-development:
-  verify: False    
+  development:
+    verify: False
+  ganache-local:
+    verify: False      
 wallets:
   from_key: ${PRIVATE_KEY}
+
 
 
 ```
