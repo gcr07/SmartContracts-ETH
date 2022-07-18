@@ -6,6 +6,24 @@ El archivo de configuracion de brownie es: ***brownie-config.yaml*** y va a nive
 
 Por default brownie intenta desplegar el contrato en ganache que trae integrado ( no guarda nada) si no le indicas a que red cuando intentas desplegar un contrato. 
 
+***brownie-config.yaml***
+
+```
+dotenv: .env
+wallets:
+  from_key: ${PRIVATE_KEY}
+  
+```
+
+***.env***
+
+```
+export PRIVATE_KEY = 0x33e9d238f1
+export WEB3_INFURA_PROJECT_ID = 0b8395
+export ETHERSCAN_TOKEN = 3V6
+
+```
+
 # Accounts existen (3 metodos)
 
 >from brownie import accounts
