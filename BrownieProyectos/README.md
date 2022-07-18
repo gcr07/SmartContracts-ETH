@@ -87,6 +87,23 @@ def get_account():
 ```
 Este metodo permite que NO te pida password al usar la private KEY en redes de pruebas.
 
+## Ejemplo de SimpleStorage
+
+***deploy.py***
+
+```
+from brownie import SimpleStorage
+from brownie import accounts, config, network
+
+def get_account():
+    if network.show_active() == "development":
+        return accounts[0]
+    else:
+        return accounts.add(config["wallets"]["from_key"])
+```
+
+
+
 # Deploy a contract 
 
 Para desplegar un contrato se necesita crear un script .py y de ahi importar nuestro contrato de solidity por ejemplo:
@@ -144,6 +161,30 @@ que ya tenemos muchos contratos desplegados ***simple_storage = SimpleStorage[-1
 
 Brownie sabe la **ABI y la Address*** porque se compilo en la carpeta del proyecto.
 
+## Ejemplo de SimpleStorage
+
+***deploy.py***
+
+ ```
+ from brownie import SimpleStorage
+from brownie import accounts, config, network
+
+
+def deploy_simple_storage():
+    # account = accounts[0]
+    # account = accounts.load("1")
+    # account = accounts.add(config["wallets"] ["from_key"])
+    account = get_account()
+    simple_storage = SimpleStorage.deploy({"from": account})
+    print(simple_storage)
+    storage_value = simple_storage.retrieve()
+    print(storage_value)
+    transaction = simple_storage.store(15, {"from": account})
+    transaction.wait(1)
+    updated_value = simple_storage.retrieve()
+    print(updated_value)
+ 
+ ```
 
 # Network  
 
