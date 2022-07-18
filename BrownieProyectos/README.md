@@ -150,9 +150,9 @@ def read_contract():
     print(simple_storage.retrieve())
 
 
-
 def main():
     read_contract()
+
 
 ```
 
