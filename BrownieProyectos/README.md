@@ -255,5 +255,17 @@ Transaction sent: 0xbd20897ba62d3fa6ecbafeef2f955917ae6894dd6371d923ad7cd6be5ece
 >>>quit()
 !Exit!!
 
+# ETHERSCAN
+
+Para publicar el codigo en etherscan se necesita generar un token (se ogbtiene dentro eherscan creando uno dentro de la pagina).
+Esta es la forma mas basica recuerda poner en el .env el token de etherscan.
+
+deploy.py
+```
+fund_me = FundMe.deploy(
+        price_feed_address,
+        {"from": account},
+        publish_source=True)
+```
 ```
 
