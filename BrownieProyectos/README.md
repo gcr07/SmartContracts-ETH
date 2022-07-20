@@ -365,4 +365,6 @@ sugiere hacer el fork desde alchemy.
 
 > brownie networks add development mainnet-fork cmd=ganache-cli host=http://127.0.0.1 fork=https://alchenyapi accounts=10 mnemonic=brownie port=8545
 
+Entonces recuerda dejaste configurado en Ubuntu mainnet-fork el cual es una fork de la red pricipal que te presta alchemy. Para usar solo teclea:
 
+> brownie run ... --network mainnet-fork
