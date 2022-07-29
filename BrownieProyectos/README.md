@@ -368,3 +368,69 @@ sugiere hacer el fork desde alchemy.
 Entonces recuerda dejaste configurado en Ubuntu mainnet-fork el cual es una fork de la red pricipal que te presta alchemy. Para usar solo teclea:
 
 > brownie run ... --network mainnet-fork
+
+
+
+# Interactuar con contratos ya desplegados INTERFACES brownie ( Separa conceptos)
+
+## Desde dentro del smartcontract
+
+Recuerda que cuando haces import SimpleStorageInterface.sol literalmente lo que hace el compilador es pegar el codigo que ahi esta.
+
+```
+// SPDX-License-Identifier: MIT
+// compiler version must be greater than or equal to 0.8.13 and less than 0.9.0
+pragma solidity ^0.6.6;
+
+interface SimpleStorageInterface {
+    function store(uint256 _favoriteNumber) external;
+
+    function retrieve() external view returns (uint256);
+
+    function addPerson(string memory _name, uint256 _favoriteNumber) external;
+}
+
+contract HelloWorld {
+    string public greet = "Hello World!";
+
+    SimpleStorageInterface simple =
+        SimpleStorageInterface(0x99B7B7EF78b731734c7e02195e4D89F4cc91872f);
+
+    function getValue() public view returns (uint256) {
+        return simple.retrieve();
+    }
+}
+
+```
+
+## Desde el script 
+
+Ayudandonos de brownie poniendo en la capeta interfaces el archiv .sol con la interfaz del contrato ya desplegado
+
+
+```
+from brownie import HelloWorld
+from brownie import accounts, config, network, interface
+# Ve que importamos la interface
+
+def main():
+    # hello = HelloWorld[-1]
+    # print(hello.getValue())  # Automaticamente solidity crea un getter para esto que
+    # Publico
+    contract = interface.SimpleStorageInterface(
+        "0x99B7B7EF78b731734c7e02195e4D89F4cc91872f"
+    )
+    print(contract)
+    print(contract.retrieve())
+
+# Solo necesitamos compilar y de ahi se obtiene el abi 
+# Despues solo usamos la direccion como esta arriba
+```
+
+
+
+
+
+
+
+
